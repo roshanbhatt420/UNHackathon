@@ -1,5 +1,5 @@
 """
-ASGI config for bais_buster project.
+ASGI config for bias_buster project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bais_buster.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bias_buster.settings')
 
 application = get_asgi_application()
