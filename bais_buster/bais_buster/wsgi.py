@@ -1,5 +1,5 @@
 """
-WSGI config for bias_detection_django project.
+WSGI config for bais_buster project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bias_detection_django.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bais_buster.settings')
 
 application = get_wsgi_application()

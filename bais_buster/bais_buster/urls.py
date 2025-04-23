@@ -1,5 +1,5 @@
 """
-URL configuration for bias_detection_django project.
+URL configuration for bais_buster project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
