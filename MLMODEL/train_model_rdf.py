@@ -8,34 +8,32 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.compose import ColumnTransformer
 
 def train_classifier():
     # Reading data
-    data = pd.read_csv("data/data.csv")
-    data = data.drop(columns=['feature_name', 'likely_values'])
+    data = pd.read_csv("data/metadata.csv")
+    # One-hot encode categorical columns
+    df_encoded = pd.get_dummies(data, columns=['data_type', 'has_names'])
 
-    # converting has_name to 1 and 0\
-    data['has_names'] = data['has_names'].map({'yes': 1, 'no': 0})
-    
+    # Drop unused or problematic columns
+    columns_to_drop = ['likely_values']
+    df_cleaned = df_encoded.drop(columns=columns_to_drop)
 
-    # data encodeing 
-
-    le_data_type = LabelEncoder()
-    data['data_type'] = le_data_type.fit_transform(data['data_type'])
-
-
-    le_keywords = LabelEncoder()
-    data['semantic_keywords'] = le_keywords.fit_transform(data['semantic_keywords'])
+    # Separate features and targetfjfff
+    x = df_cleaned.drop(columns=['is_sensitive'])
+    y = df_cleaned['is_sensitive'] 
 
 
+    preprocessor = preprocess_data()
+    X_transformed = preprocessor.fit_transform(x)
 
-    
-    # Splitting data into features and target
-    x = data.drop("is_sensitive", axis=1)
-    y = data["is_sensitive"]
 
     # Splitting the data into training and testing sets
-    xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.2, random_state=42)
+    xtrain, xtest, ytrain, ytest = train_test_split(X_transformed, y, test_size=0.2, random_state=42)
+    
 
     # Training the Random Forest model
     rmf = RandomForestClassifier(random_state=42)
@@ -43,6 +41,8 @@ def train_classifier():
 
     # Making predictions
     model_predictions = rmf.predict(xtest)
+    print(model_predictions)
+
 
     # Generating and saving classification report
     report = classification_report(ytest, model_predictions)
@@ -51,9 +51,9 @@ def train_classifier():
         f.write(report)
 
     # Saving feature importance
-    feature_importance = pd.DataFrame({'features': x.columns, 'importance': rmf.feature_importances_}).sort_values('importance', ascending=False)
-    print("Feature importance is added")
-    feature_importance.to_csv("feature.csv", index=False)
+    # feature_importance = pd.DataFrame({'features': X_transformed.columns, 'importance': rmf.feature_importances_}).sort_values('importance', ascending=False)
+    # print("Feature importance is added")
+    # feature_importance.to_csv("feature.csv", index=False)
 
     # Generating and saving confusion matrix
     plt.figure(figsize=(8, 6))
@@ -66,5 +66,21 @@ def train_classifier():
     # Saving the confusion matrix plot
     plt.savefig("confusion_matrix.png")
     plt.show()
+    return rmf
 
-train_classifier()
+
+  # Build ColumnTransformer
+def preprocess_data():
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('tfidf_keywords', TfidfVectorizer(stop_words='english', max_features=100), 'semantic_keywords'),
+            ('tfidf_feature_name', TfidfVectorizer(stop_words='english', max_features=100), 'feature_name'),
+            ('scale_ratio', StandardScaler(), ['unique_ratio']),
+        ],
+        remainder='passthrough'
+    )
+    return preprocessor
+    
+
+
+
