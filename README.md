@@ -1,4 +1,4 @@
-# BiasBuster AI: Tackling Bias in Machine Learning  
+# Fairalyze AI: Tackling Bias in Machine Learning  
 
 ## 🧩 Problem Statement  
 In the age of Machine Learning, biased training data can lead to discriminatory model predictions, worsening existing social inequalities. Whether in hiring, lending, or healthcare, these unfair outcomes are often undetected — silently impacting real lives.  
@@ -52,14 +52,14 @@ Helping developers and data scientists recognize how biases in data can silently
 Ensuring that machine learning models do not disproportionately harm underrepresented or vulnerable groups.  
 
 ### 🌍 Creating Real-World Impact  
-BiasBuster AI is useful across sectors like:  
+Fairalyze AI is useful across sectors like:  
 - **Hiring** → Preventing gender or ethnic discrimination.  
 - **Healthcare** → Ensuring equal treatment recommendations.  
 - **Finance** → Reducing bias in credit scoring and loan approvals.  
 - **Education** → Promoting equitable admission systems.  
 
 ### 💡 Empowering Ethical AI Development  
-BiasBuster AI makes fairness evaluation easy and accessible, especially for smaller companies or developers without access to large research teams.  
+Fairalyze AI makes fairness evaluation easy and accessible, especially for smaller companies or developers without access to large research teams.  
 
 ---  
-**BiasBuster AI** is your partner in building fair, ethical, and impactful machine learning systems. Together, let’s create a future where AI works for everyone.  
+**Fairalyze AI** is your partner in building fair, ethical, and impactful machine learning systems. Together, let’s create a future where AI works for everyone.  
