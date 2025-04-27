@@ -175,7 +175,7 @@
     display: none;
   }
   
-  /*Heart of Fairalyze foor*/
+  /*Designing Heart of Fairalyze foor*/
   
   .love {
     color: red;
@@ -184,6 +184,7 @@
     font-size: 1.0rem; 
   }
   
+
   @keyframes pulse {
     from {
       transform: scale(1);
