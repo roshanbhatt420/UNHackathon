@@ -1,0 +1,198 @@
+/* This is Index Page CSS */
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 30vh;
+    padding-top: 4rem;
+    background-color: #f5f5f5;
+    padding-bottom: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  
+  .main-content h1 {
+    font-size: 2.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .main-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--gray-color);
+  }
+  
+  
+  .cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  
+  }
+  
+  .cta-button:hover{
+    background-image: linear-gradient(130deg, #45a29e, #187d76);
+    box-shadow: 0 2px 11px rgba(37, 179, 170, 0.6);
+    transition:0.3s ease-out;
+    cursor:pointer;
+  }
+  
+  
+  /* Upload Section */
+  
+  .upload-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+  }
+  
+  .upload-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Upload Box Styling */
+  
+  .upload-box {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 250px; 
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 2px dashed #5b5b5b;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-box:hover {
+    border-color:var(--primary-color);
+  }
+  
+  .upload-image-label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .upload-image-label:hover {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  
+  /* Upload File icon's design */
+  
+  .upload-image {
+    max-width: 100px;
+    max-height: 100px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.1s ease;
+  }
+  
+  .upload-box:hover .upload-image {
+    opacity: 1;
+    transform: scale(1.01);
+    transition: 0.8s ease;
+  }
+  
+  
+  .upload-image {
+    max-width: 100px;
+    max-height: 100px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .click-up{
+   margin: 10px;
+   font-size: 16px;
+   color: var(--gray-color);
+   text-align: center;
+  }
+  
+  /*Upload validation msg*/
+  
+  .msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    padding: 8px 8px; 
+    margin-top: 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid #ccc;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+    width: fit-content;
+    font-size: 1rem; 
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 40px; 
+  }
+  
+  .msg.success {
+    background-color: rgba(0, 200, 100, 0.15);
+    border: 1px solid rgba(0, 200, 100, 0.6);
+    color: #007f5f;
+  }
+  
+  .msg.error {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    color: #d90429;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  
+  .file-input {
+    display: none;
+  }
+  
+  /*Heart of Fairalyze foor*/
+  
+  .love {
+    color: red;
+    animation: pulse 1.7s infinite alternate;
+    display: inline-block;
+    font-size: 1.0rem; 
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(1);
+      opacity: 0.2;
+    }
+    to {
+      transform: scale(1.2); 
+      opacity: 1;
+    }
+  }
+  
+  
