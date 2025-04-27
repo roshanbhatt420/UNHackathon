@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bias Buster</title>
-</head>
-<body>
-   
-    <div class="main">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Fairalyze AI</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar (Logo and Links) -->
+    <header id="navbar" class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">Fairalyze AI</a>
+        <nav class="nav-links">
+          <a href="index.html#home" class="nav-link">Home</a>
+          <a href="project.html#approach" class="nav-link">Approach</a>
+          <a href="about.html#team" class="nav-link">Team</a>
+        </nav>
+      </div>
+    </header>
 
+    <!-- main Section with headline and CTA -->
+    <section id="overview" class="main">
+      <div class="container main-content">
+        <h1>Ensure Fairness in Your AI Models.</h1>
+      </div>
+    </section>
 
+    <!-- Demo Section: Upload data and show chart -->
+    <section id="upload-section" class="upload-section">
+      <div class="container upload-container">
+        <h2>Upload Your Dataset.</h2>
+        <p>Drag and drop or upload your CSV file.</p>
 
-    </div>
+        <!-- Upload Box with Image Inside -->
+        <div class="upload-box" id="drop-zone">
+          <!-- Make only the image clickable for upload -->
+          <label for="fileInput" class="upload-image-label">
+            <img src="images/file.png" alt="Upload your datset file" class="upload-image" id="uploadImage" />
 
-    
-</body>
+            <label>Upload Here...</label>
+          </label>
+
+          <input type="file" id="fileInput" class="file-input" accept=".csv" />
+        </div>
+
+        <div class="msg hidden" id="msgBox">
+          <p id="fileName">No file uploaded yet</p>
+        </div>
+
+        <button id="checkFairnessBtn" class="cta-button">Check Fairness</button>
+
+        <!-- Called when onclick activation -->
+        <div id="analysisResults" class="analysis-results hidden">
+          <h3>Insights Generated</h3>
+          <p>Here will be the insights</p>
+          <p>Bias Checked Successfully</p>
+          <p>Here will be Recommendations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with links, contact, and credits -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Made with <span class="love">❤️</span> by Fairalyze AI Team</p>
+        <div class="footer-links">
+          <a href="index.html#overview">Home</a>
+          <a href="project.html#approach">Approach</a>
+          <a href="about.html#team">Team</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Global JS (Sticky nav, scroll animations, etc.) -->
+    <script src="js/script.js"></script>
+    <!-- Page-specific JS -->
+    <script src="js/index.js"></script>
+  </body>
 </html>
