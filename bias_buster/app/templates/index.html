@@ -1,27 +1,99 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bias Buster</title>
-</head>
-<body>
-    <h1>Welcome to Bias Buster</h1>
-    <p>This is a simple web application to help you identify and mitigate bias in your dataset.</p>
-    <p>To get started, please upload your dataset.</p>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".csv, .xlsx" required>
-        <button type="submit">Upload</button>
-    </form>
-    <h2>Instructions</h2>
-    <p>1. Upload your dataset in CSV or Excel format.</p>
-    <p>2. The application will analyze the dataset for potential biases.</p>
-    <p>3. Review the results and take necessary actions to mitigate bias.</p>
-    <h2>About</h2>
-    <p>Bias Buster is designed to help data scientists and researchers identify biases in their datasets, ensuring fair and equitable outcomes in machine learning models.</p>
-    <h2>Contact</h2>
-    <p>If you have any questions or feedback, please reach out to us at </p>
-    
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Fairalyze AI</title>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+    <!-- included Google Fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Included Global CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+  </head>
+  <body>
+    <!-- Navigation Bar (Logo and Links) -->
+    <header id="navbar" class="navbar">
+      <div class="container nav-container">
+        <a href="{% url 'index' %}" class="logo"> 
+          <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
+        </a>
+        <nav class="nav-links"></nav>
+          <a href="{% url 'index' %}" class="nav-link"> 
+            <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home 
+          </a>
+          <a href="{% url 'project' %}" class="nav-link"> 
+            <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach 
+          </a>
+          <a href="{% url 'about' %}" class="nav-link"> 
+            <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team 
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main Section with headline -->
+    <section id="overview" class="main">
+      <div class="container main-content">
+        <h1>Ensure Fairness in Your AI Models.</h1>
+      </div>
+    </section>
+
+    <!--Section to Upload data and show chart -->
+    <section id="upload-section" class="upload-section">
+      <div class="container upload-container">
+        <h2>Upload Your Dataset.</h2>
+        <p>Drag and drop or upload your CSV file.</p>
+
+        <!-- Upload/ Drag & Drop box -->
+        <div class="upload-box" id="drop-zone">
+          <label for="fileInput" class="upload-image-label">
+            <img src="{% static 'images/file.png' %}" alt="Upload your dataset file" class="upload-image" id="uploadImage" />
+            <span class="click-up">Click to Upload...</span>
+          </label>
+          <input type="file" id="fileInput" class="file-input" accept=".csv" />
+        </div>
+
+        <div class="msg hidden" id="msgBox">
+          <p id="fileName">No file uploaded yet</p>
+        </div>
+
+        <button id="checkFairnessBtn" class="cta-button">Check Fairness</button>
+
+        <!-- Called when onclick activation -->
+        <div id="analysisResults" class="analysis-results hidden">
+          <h3>Insights Generated</h3>
+          <p>Here will be the insights</p>
+          <p>Bias Checked Successfully</p>
+          <p>Here will be Recommendations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with links, contact, and credits -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>Made with <span class="love">❤️</span> by Fairalyze AI Team</p>
+        <div class="footer-links">
+          <a href="{% url 'index' %}#overview">
+            <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />Home
+          </a>
+          <a href="{% url 'project' %}#approach">
+            <img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />Approach
+          </a>
+          <a href="{% url 'about' %}#team">
+            <img src="{% static 'images/team1.png' %}" alt="Teams" class="nav-icons" />Team
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Global Javascript for Animations-->
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- JS of this specific page -->
+    <script src="{% static 'js/index.js' %}"></script>
+  </body>
 </html>

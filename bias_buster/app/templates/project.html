@@ -1,27 +1,37 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fairalyze AI - Case Study</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
-    <!--  Included Google Font Poppins-->
+    <!-- Included Google Font Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
     <!-- Included Global CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/project.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/project.css' %}" />
   </head>
   <body>
     <!-- Navigation Bar -->
     <header id="navbar" class="navbar">
       <div class="container nav-container">
-        <a href="index.html" class="logo"> <img src="images/logo.png" alt="Logo" class="nav-icons-logo" />Fairalyze AI</a>
+        <a href="{% url 'index' %}" class="logo">
+          <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
+        </a>
         <nav class="nav-links">
-          <a href="index.html" class="nav-link"> <img src="images/home.png" alt="Home" class="nav-icons" />Home </a>
-          <a href="project.html" class="nav-link"> <img src="images/lists.png" alt="Features" class="nav-icons" />Approach </a>
-          <a href="about.html" class="nav-link"> <img src="images/team.png" alt="Teams" class="nav-icons" />Team </a>
-    </div>
+          <a href="{% url 'index' %}" class="nav-link">
+            <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
+          </a>
+          <a href="{% url 'project' %}" class="nav-link"></a>
+            <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
+          </a>
+          <a href="{% url 'about' %}" class="nav-link">
+            <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
+          </a>
+        </nav>
+      </div>
     </header>
 
     <!-- Introduction Section -->
@@ -173,16 +183,16 @@
       <div class="footer-content">
         <p>Made with <span class="love">❤️</span> by Fairalyze AI Team</p>
         <div class="footer-links">
-          <a href="index.html#overview"><img src="images/home1.png" alt="Home" class="nav-icons" />Home</a>
-          <a href="project.html#approach"><img src="images/lists1.png" alt="Features" class="nav-icons" />Approach</a>
-          <a href="about.html#team"><img src="images/team1.png" alt="Teams" class="nav-icons" />Team</a>
+          <a href="{% url 'index' %}#overview"><img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />Home</a>
+          <a href="{% url 'project' %}#approach"><img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />Approach</a>
+          <a href="{% url 'about' %}#team"><img src="{% static 'images/team1.png' %}" alt="Teams" class="nav-icons" />Team</a>
         </div>
       </div>
     </footer>
 
     <!-- Global Javascript for Animations-->
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <!-- JS of this specific page -->
-    <script src="js/project.js"></script>
+    <script src="{% static 'js/project.js' %}"></script>
   </body>
 </html>
