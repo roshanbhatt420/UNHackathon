@@ -1,0 +1,114 @@
+/* Project Page Styles */
+
+/* Case Study Header */
+.project-header {
+  background: linear-gradient(to right, #f5f5f5, #eaeaea);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.project-header p {
+  font-size: 1.2rem;
+  color: var(--gray-color);
+}
+
+/* Features Section */
+.features-section {
+  padding: 5rem 0;
+}
+
+.features-list {
+  list-style: none;
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  background: #ffffffcc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item strong {
+  color: var(--primary-color);
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 5rem 0;
+  background: linear-gradient(to right, #f5f5f5, #eaeaea);
+
+}
+
+.steps-list {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+}
+
+.steps-list li {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.testimonials blockquote {
+  background: #ffffff;
+  border-left: 5px solid var(--primary-color);
+  padding: 1.5rem 2rem;
+  max-width: 700px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  border-radius: 8px;
+}
+
+.testimonials span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Approach Section (Impact) */
+.approach-section {
+  background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.approach-section p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--gray-color);
+}
+
+/* Fade In Animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}

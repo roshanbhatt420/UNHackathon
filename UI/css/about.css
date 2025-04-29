@@ -1,0 +1,233 @@
+/* About Page Scoped Styling */
+
+/* Mission Section */
+.mission-section {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(to right, #f5f5f5, #eaeaea);
+}
+
+.mission-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.mission-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* CTA Button */
+.mission-section .cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.mission-section .cta-button:hover {
+  background-color: #333;
+}
+
+
+/* Commitments Section */
+.commitment-section {
+  background: #f8fafc;
+  padding: 4rem 0;
+}
+
+.commitment-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.commitment {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.commitment img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Vision Timeline */
+.vision-phase {
+  position: relative;
+  padding: 2rem;
+  margin: 2rem 0;
+  background: white;
+  border-left: 4px solid #3498db;
+}
+
+.phase-number {
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3498db;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Team Section */
+
+.teams-head{
+margin-bottom:30px;
+justify-content: center;
+display: flex;
+flex-direction: row;
+
+}
+
+.team-section {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.team-section .team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-section .team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1.8rem;
+  width: 315px;
+  min-height: 480px;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 0.5px solid #ddd;
+}
+
+.team-section .team-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  display: block;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.team-section .team-photo:hover {
+  box-shadow: 0 5px 11px rgba(0, 0, 0, 0.3);
+}
+
+.team-section .team-member:hover {
+  transform: translateY(-5px);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.team-section .team-member h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.team-section .role {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #555;
+  background-color: #f1f1f1;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+.team-section .team-member p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.team-section .linkedin-link {
+  margin-top: auto;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.team-section .linkedin-link:hover {
+  background-color: #333;
+}
+
+/* CTA Button */
+.mission-section .cta-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.mission-section .cta-button:hover {
+  background-color: #333;
+}
+
+.love {
+  color: red;
+  animation: pulse 1.7s infinite alternate;
+  display: inline-block;
+  font-size: 1.0rem; 
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  to {
+    transform: scale(1.2); 
+    opacity: 1;
+  }
+}
