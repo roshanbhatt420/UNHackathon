@@ -96,60 +96,66 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="case-studies-section">
-      <div class="cs-container">
-        <h2 class="cs-heading">Documented AI Bias Cases We Prevent</h2>
-        <p class="cs-subheading">Fairalyze addresses real-world algorithmic discrimination patterns verified by research</p>
-        
+    <section class="bias-cases">
+      <div class="case-study-container">
+        <header class="section-header">
+          <h2>Documented AI Bias Cases</h2>
+          <p class="subtitle">How Fairalyze Prevents These Industry Failures</p>
+        </header>
+    
         <div class="case-study-grid">
           <!-- Case Study 1 -->
-          <article class="case-study-card">
-            <div class="cs-image-container">
-              <img src="images/hiring-bias.jpg" alt="Gender bias in hiring algorithms" class="cs-image">
+          <article class="case-study-card" id="gender-bias-case">
+            <div class="case-study-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gender bias in AI" loading="lazy">
             </div>
-            <div class="cs-content">
-              <h3 class="cs-title">Gender Discrimination in Hiring AI</h3>
-              <div class="cs-problem">
-                <h4>Documented Incident</h4>
-                <p>A 2018 Reuters investigation revealed Amazon's recruiting algorithm systematically downgraded resumes containing words like "women's" (e.g., "women's chess club captain").</p>
-              </div>
-              <div class="cs-solution">
-                <h4>Our Detection Method</h4>
-                <ul>
-                  <li>Identifies gender-coded language patterns</li>
-                  <li>Analyzes approval rate disparities by gender</li>
-                  <li>Validates training data representation</li>
-                </ul>
+            <div class="case-study-content">
+              <h3>Amazon Recruitment Algorithm (2018)</h3>
+              <div class="case-study-details">
+                <div class="problem">
+                  <h4>Documented Issue</h4>
+                  <p>The AI system penalized resumes containing words like "women's" (e.g., "women's chess club captain") and downgraded graduates of all-women's colleges.</p>
+                </div>
+                <div class="solution">
+                  <h4>Fairalyze Prevention</h4>
+                  <ul>
+                    <li>Gender-coded language detection</li>
+                    <li>Demographic parity scoring</li>
+                    <li>Candidate evaluation audits</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </article>
-          
+    
           <!-- Case Study 2 -->
-          <article class="case-study-card">
-            <div class="cs-image-container">
-              <img src="images/loan-bias.jpg" alt="Racial bias in lending algorithms" class="cs-image">
+          <article class="case-study-card" id="racial-bias-case">
+            <div class="case-study-image">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Racial bias in lending" loading="lazy">
             </div>
-            <div class="cs-content">
-              <h3 class="cs-title">Racial Bias in Financial Services AI</h3>
-              <div class="cs-problem">
-                <h4>Documented Incident</h4>
-                <p>FDIC 2022 data shows minority applicants face 40% higher loan denial rates despite similar financial profiles to white applicants.</p>
-              </div>
-              <div class="cs-solution">
-                <h4>Our Detection Method</h4>
-                <ul>
-                  <li>Measures demographic disparity in approval rates</li>
-                  <li>Flags proxy discrimination through ZIP code analysis</li>
-                  <li>Validates fairness across protected classes</li>
-                </ul>
+            <div class="case-study-content">
+              <h3>Algorithmic Lending Discrimination (2022)</h3>
+              <div class="case-study-details">
+                <div class="problem">
+                  <h4>Documented Issue</h4>
+                  <p>FDIC report showed minority applicants faced 40% higher denial rates despite similar financial profiles to approved applicants.</p>
+                </div>
+                <div class="solution">
+                  <h4>Fairalyze Prevention</h4>
+                  <ul>
+                    <li>Disparate impact analysis</li>
+                    <li>Approval rate parity monitoring</li>
+                    <li>Feature importance auditing</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </article>
         </div>
-        
-        <div class="cs-footnote">
-          <p>*Detection capabilities verified through controlled testing with synthetic datasets mirroring these bias patterns.</p>
-        </div>
+    
+        <footer class="case-study-footer">
+          <p>*Detection capabilities validated through synthetic dataset testing against known bias patterns.</p>
+        </footer>
       </div>
     </section>
 

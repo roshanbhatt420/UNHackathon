@@ -58,13 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Check Fairness
     checkBtn.addEventListener("click", () => {
     if (!fileInput.files.length) {
-      showMsg("Please upload a file first!", "error", false); // stay there
+      showMsg("Please upload a file first!", "error", false); 
       return;
     }
   
     setTimeout(() => {
       analysisResults.classList.remove("hidden");
-      showMsg("Analysis completed!", "success", true); // temporary
+      showMsg("Analysis completed!", "success", true); 
     }, 1000);
     });
   
