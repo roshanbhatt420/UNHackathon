@@ -5,53 +5,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Fairalyze AI</title>
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 
     <!-- included Google Fonts Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
     <!-- Included Global CSS -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="css/styles.css" />
 
-    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <!-- Navigation Bar (Logo and Links) -->
     <header id="navbar" class="navbar">
       <div class="container nav-container">
-        <a href="{% url 'index' %}" class="logo"> 
-          <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
-        </a>
-        <nav class="nav-links"></nav>
-          <a href="{% url 'index' %}" class="nav-link"> 
-            <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home 
-          </a>
-          <a href="{% url 'project' %}" class="nav-link"> 
-            <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach 
-          </a>
-          <a href="{% url 'about' %}" class="nav-link"> 
-            <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team 
-          </a>
+        <a href="index.html" class="logo"> <img src="images/logo.png" alt="Logo" class="nav-icons-logo" />Fairalyze AI</a>
+        <!--Responsive Section-->
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link"> <img src="images/home.png" alt="Home" class="nav-icons" />Home </a>
+          <a href="project.html" class="nav-link"> <img src="images/lists.png" alt="Features" class="nav-icons" />Approach </a>
+          <a href="about.html" class="nav-link"> <img src="images/team.png" alt="Teams" class="nav-icons" />Team </a>
         </nav>
       </div>
     </header>
-
-    <!-- main Section with headline -->
-    <section id="overview" class="main">
-      <div class="container main-content">
-        <h1>Ensure Fairness in Your AI Models.</h1>
-      </div>
+    <section class="mainbox">
+      <!-- main Section with headline -->
+      <section id="overview" class="main">
+        <div class="main-content">
+          <h1>
+            Ensure Fairness <br />
+            In Your AI Models
+          </h1>
+          <p class="subtitle">
+            <span class="name">Fairalyze AI</span> is a bias detection platform that empowers developers and organizations to build fair, inclusive
+            algorithms that <span class="theme"> promote equality and reduce discrimination.</span>
+          </p>
+        </div>
+        <div class="SDGbanner">
+          <img src="images/SDGrowth.png" alt="SDG-Banner" class="sdg-banner" />
+        </div>
+      </section>
     </section>
 
     <!--Section to Upload data and show chart -->
     <section id="upload-section" class="upload-section">
-      <div class="container upload-container">
-        <h2>Upload Your Dataset.</h2>
+      <div class="upload-container">
+        <h2>Upload Your Dataset :</h2>
         <p>Drag and drop or upload your CSV file.</p>
 
         <!-- Upload/ Drag & Drop box -->
         <div class="upload-box" id="drop-zone">
           <label for="fileInput" class="upload-image-label">
-            <img src="{% static 'images/file.png' %}" alt="Upload your dataset file" class="upload-image" id="uploadImage" />
+            <img src="images/file.png" alt="Upload your dataset file" class="upload-image" id="uploadImage" />
             <span class="click-up">Click to Upload...</span>
           </label>
           <input type="file" id="fileInput" class="file-input" accept=".csv" />
@@ -76,24 +86,57 @@
     <!-- Footer with links, contact, and credits -->
     <footer class="footer">
       <div class="footer-content">
-        <p>Made with <span class="love">❤️</span> by Fairalyze AI Team</p>
-        <div class="footer-links">
-          <a href="{% url 'index' %}#overview">
-            <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />Home
-          </a>
-          <a href="{% url 'project' %}#approach">
-            <img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />Approach
-          </a>
-          <a href="{% url 'about' %}#team">
-            <img src="{% static 'images/team1.png' %}" alt="Teams" class="nav-icons" />Team
-          </a>
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h4>Fairalyze AI</h4>
+            <div class="sdg-badges">
+              <span class="sdg-badge sdg-5">SDG 5</span>
+              <span class="sdg-badge sdg-10">SDG 10</span>
+            </div>
+            <p class="hackathon-mention">As a part of GNEC Hackathon 2025</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+              <a href="index.html#overview">
+                <div class="link-icon">
+                  <img src="images/home1.png" alt="Home" class="nav-icons" />
+                </div>
+                <span>Home</span>
+              </a>
+              <a href="project.html#approach">
+                <div class="link-icon">
+                  <img src="images/lists1.png" alt="Approach" class="nav-icons" />
+                </div>
+                <span>Approach</span>
+              </a>
+              <a href="about.html#team">
+                <div class="link-icon">
+                  <img src="images/team1.png" alt="Team" class="nav-icons" />
+                </div>
+                <span>Team</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
+              <img alt="Discord-logo" src="images/discord.png" class="social-icon" />
+              <span>Join Discord</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>&copy; 2025 Fairalyze AI | GNEC Hackathon Project</p>
         </div>
       </div>
     </footer>
-
     <!-- Global Javascript for Animations-->
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="js/script.js"></script>
     <!-- JS of this specific page -->
-    <script src="{% static 'js/index.js' %}"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
