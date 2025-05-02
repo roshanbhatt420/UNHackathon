@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     setTimeout(() => {
       analysisResults.classList.remove("hidden");
-      showMsg("Analysis completed!", "success", true); // temporary
+      showMsg("Analysis completed!", "success", true); // The success message will be hidden after a timeout
     }, 1000);
     });
   
