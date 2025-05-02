@@ -2,9 +2,10 @@
 
 /* Mission Section */
 .mission-section {
-  padding: 6rem 0;
+
+  background: var(--primary-gradient);
+  padding: 5rem 0;
   text-align: center;
-  background: linear-gradient(to right, #f5f5f5, #eaeaea);
 }
 
 .mission-section h1 {
@@ -17,7 +18,7 @@
 .mission-section p {
   max-width: 800px;
   margin: 0 auto;
-  color: #666;
+  color:#d9d9d9;
   line-height: 1.8;
 }
 
@@ -32,18 +33,20 @@
   margin-top: 2rem;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .mission-section .cta-button:hover {
-  background-color: #333;
+  background-color: var(--gray-color);
+  
 }
 
 
 /* Commitments Section */
 .commitment-section {
-  background: #f8fafc;
+  background: var(--primary-gradient);
   padding: 4rem 0;
+  color: #fff;
 }
 
 .commitment-cards {
@@ -54,6 +57,7 @@
 }
 
 .commitment {
+  color: #333;
   background: white;
   padding: 2rem;
   border-radius: 16px;
@@ -67,7 +71,11 @@
   margin-bottom: 1rem;
 }
 
-/* Vision Timeline */
+/* Vision Section */
+.vision-section{
+  padding-top: 2rem;
+background:var(--secondary-gradient);
+}
 .vision-phase {
   position: relative;
   padding: 2rem;
@@ -95,6 +103,7 @@
 /* Team Section */
 
 .teams-head{
+  color: #fff;
 margin-bottom:30px;
 justify-content: center;
 display: flex;
@@ -103,9 +112,10 @@ flex-direction: row;
 }
 
 .team-section {
+
   padding: 4rem 0;
   text-align: center;
-  background-color: #f9f9f9;
+background: var(--primary-gradient);
 }
 
 .team-section .team-cards {

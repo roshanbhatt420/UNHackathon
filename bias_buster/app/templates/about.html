@@ -1,39 +1,37 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale =1.0"  />
     <title>Fairalyze AI - About Us</title>
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <!-- included Google Fonts Poppins -->
+     <!-- included Google Fonts Poppins -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <!-- Included Global CSS -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+    <link rel="stylesheet" href="css/about.css" />
   </head>
   <body>
     <!-- Navigation Bar (Logo and Links) -->
     <header id="navbar" class="navbar">
       <div class="container nav-container">
-        <a href="{% url 'index' %}" class="logo">
-          <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
-        </a>
+        <a href="index.html" class="logo"> <img src="images/logo.png" alt="Logo" class="nav-icons-logo" />Fairalyze AI</a>
+        <!--Responsive Section-->
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+
         <nav class="nav-links">
-          <a href="{% url 'index' %}" class="nav-link">
-            <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
-          </a>
-          <a href="{% url 'project' %}" class="nav-link">
-            <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
-          </a>
-          <a href="{% url 'about' %}" class="nav-link">
-            <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
-          </a>
+          <a href="index.html" class="nav-link"> <img src="images/home.png" alt="Home" class="nav-icons" />Home </a>
+          <a href="project.html" class="nav-link"> <img src="images/lists.png" alt="Features" class="nav-icons" />Approach </a>
+          <a href="about.html" class="nav-link"> <img src="images/team.png" alt="Teams" class="nav-icons" />Team </a>
         </nav>
       </div>
     </header>
@@ -50,65 +48,64 @@
           equitable and transparent AI future.
         </p>
         <!-- Call to Action Button -->
-        <a href="{% url 'project' %}" class="cta-button">Learn About Our Approach</a>
+        <a href="project.html" class="cta-button">Learn About Our Approach</a>
       </div>
     </section>
 
-    <!-- Commitment Section -->
-    <section class="commitment-section fade-in-section">
-      <div class="container">
-        <h2>Our Core Commitments</h2>
-        <div class="commitment-cards">
-          <div class="commitment">
-            <img src="{% static 'images/transparency.png' %}" alt="Transparency">
-            <h3>Radical Transparency</h3>
-            <p>All fairness assessments include explainable AI techniques to show exactly how biases are detected</p>
-          </div>
-          <div class="commitment">
-            <img src="{% static 'images/SDG-logo.png' %}" alt="sdg-logo" class="sdg-logo">
-            <h3>SDG-Aligned Development</h3>
-            <p>Directly supporting UN Sustainable Development Goals 5 (Gender Equality), 8 (Decent Work), and 10 (Reduced Inequalities)</p>
-          </div>
-          <div class="commitment">
-            <img src="{% static 'images/education.png' %}" alt="Education">
-            <h3>Developer Education</h3>
-            <p>Free resources and tutorials on ethical AI practices for underrepresented communities</p>
-          </div>
-        </div>
+ <!-- Commitment Section -->
+<section class="commitment-section fade-in-section">
+  <div class="container">
+    <h2>Our Core Commitments</h2>
+    <div class="commitment-cards">
+      <div class="commitment">
+        <img src="images/transparency.png" alt="Transparency">
+        <h3>Radical Transparency</h3>
+        <p>All fairness assessments include explainable AI techniques to show exactly how biases are detected</p>
       </div>
-    </section>
-
-    <!-- Vision Section -->
-    <section class="vision-section fade-in-section">
-      <div class="container">
-        <h2>Our Vision for Ethical AI</h2>
-        <div class="vision-timeline">
-          <div class="vision-phase">
-            <div class="phase-number">1</div>
-            <h3>Bias Detection (2024)</h3>
-            <p>Establish robust detection frameworks for common bias patterns in hiring and finance</p>
-          </div>
-          <div class="vision-phase">
-            <div class="phase-number">2</div>
-            <h3>Prevention Tools (2025)</h3>
-            <p>Develop real-time bias prevention during model training</p>
-          </div>
-          <div class="vision-phase">
-            <div class="phase-number">3</div>
-            <h3>Global Standards (2026+)</h3>
-            <p>Partner with institutions to create region-specific fairness benchmarks</p>
-          </div>
-        </div>
+      <div class="commitment">
+        <img src="images/SDG-logo.png" alt="sdg-logo" class="sdg-logo">
+        <h3>SDG-Aligned Development</h3>
+        <p>Directly supporting UN Sustainable Development Goals 5 (Gender Equality), 8 (Decent Work), and 10 (Reduced Inequalities)</p>
       </div>
-    </section>
+      <div class="commitment">
+        <img src="images/education.png" alt="Education">
+        <h3>Developer Education</h3>
+        <p>Free resources and tutorials on ethical AI practices for underrepresented communities</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Vision Section -->
+<section class="vision-section fade-in-section">
+  <div class="container">
+    <h2>Our Vision for Ethical AI</h2>
+    <div class="vision-timeline">
+      <div class="vision-phase">
+        <div class="phase-number">1</div>
+        <h3>Bias Detection (2024)</h3>
+        <p>Establish robust detection frameworks for common bias patterns in hiring and finance</p>
+      </div>
+      <div class="vision-phase">
+        <div class="phase-number">2</div>
+        <h3>Prevention Tools (2025)</h3>
+        <p>Develop real-time bias prevention during model training</p>
+      </div>
+      <div class="vision-phase">
+        <div class="phase-number">3</div>
+        <h3>Global Standards (2026+)</h3>
+        <p>Partner with institutions to create region-specific fairness benchmarks</p>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Team Section -->
-    <section class="team-section">
+    <section class="team-section ">
       <div class="container">
-        <h2 class="teams-head">Meet the Team</h2>
+        <h2 class = "teams-head">Meet the Team</h2>
         <div class="team-cards">
           <div class="team-member">
-            <img src="{% static 'images/puspa.jpeg' %}" alt="Puspa" class="team-photo" />
+            <img src="images/puspa.jpeg" alt="Puspa" class="team-photo" />
             <h3>Puspa Regmi</h3>
             <p class="role">Full Stack Developer</p>
             <p>
@@ -125,7 +122,7 @@
             >
           </div>
           <div class="team-member">
-            <img src="{% static 'images/roshan.jpeg' %}" alt="Roshan" class="team-photo" />
+            <img src="images/roshan.jpeg" alt="Roshan" class="team-photo" />
             <h3>Roshan Bhatta</h3>
             <p class="role">ML Specialist</p>
             <p>
@@ -142,7 +139,7 @@
             >
           </div>
           <div class="team-member">
-            <img src="{% static 'images/anup.jpeg' %}" alt="Anup" class="team-photo" />
+            <img src="images/anup.jpeg" alt="Anup" class="team-photo" />
             <h3>Anup Paudel</h3>
             <p class="role">Front-end Developer</p>
             <p>
@@ -162,27 +159,62 @@
       </div>
     </section>
 
+
     <!-- Footer with links, contact, and credits -->
     <footer class="footer">
       <div class="footer-content">
-        <p>Made with <span class="love">❤️</span> by Fairalyze AI Team</p>
-        <div class="footer-links">
-          <a href="{% url 'index' %}#overview">
-            <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />Home
-          </a>
-          <a href="{% url 'project' %}#approach">
-            <img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />Approach
-          </a>
-          <a href="{% url 'about' %}#team">
-            <img src="{% static 'images/team1.png' %}" alt="Teams" class="nav-icons" />Team
-          </a>
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h4>Fairalyze AI</h4>
+            <div class="sdg-badges">
+              <span class="sdg-badge sdg-5">SDG 5</span>
+              <span class="sdg-badge sdg-10">SDG 10</span>
+            </div>
+            <p class="hackathon-mention">As a part of GNEC Hackathon 2025</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+              <a href="index.html#overview">
+                <div class="link-icon">
+                  <img src="images/home1.png" alt="Home" class="nav-icons" />
+                </div>
+                <span>Home</span>
+              </a>
+              <a href="project.html#approach">
+                <div class="link-icon">
+                  <img src="images/lists1.png" alt="Approach" class="nav-icons" />
+                </div>
+                <span>Approach</span>
+              </a>
+              <a href="about.html#team">
+                <div class="link-icon">
+                  <img src="images/team1.png" alt="Team" class="nav-icons" />
+                </div>
+                <span>Team</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
+              <img alt="Discord-logo" src="images/discord.png" class="social-icon" />
+              <span>Join Discord</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>&copy; 2025 Fairalyze AI | GNEC Hackathon Project</p>
         </div>
       </div>
     </footer>
 
     <!-- Global Javascript for Animations-->
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="js/script.js"></script>
     <!-- JS of this specific page -->
-    <script src="{% static 'js/about.js' %}"></script>
+    <script src="js/about.js"></script>
   </body>
 </html>
