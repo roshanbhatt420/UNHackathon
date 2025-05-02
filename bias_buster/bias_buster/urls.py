@@ -23,7 +23,5 @@ urlpatterns = [
     path('', views.home_page, name='index'), 
     path('about/', views.about_page, name='about'),
     path('project/', views.project_page, name='project'),
-
-
- 
+    path('upload/', views.upload_and_analyze, name='upload'),
 ]

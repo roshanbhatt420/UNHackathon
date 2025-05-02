@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const analysisResults = document.getElementById("analysisResults");
   const msgBox = document.getElementById("msgBox");
   const fileName = document.getElementById("fileName");
+  const uploadForm = document.getElementById("uploadForm");
 
   let msgTimeout; // to track and clear previous timeouts
 
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dropZone.classList.remove("dragover");
   
     const file = e.dataTransfer.files[0];
-    if (file && file.name.endsWith(".csv")) {
+    if (file?.name?.endsWith(".csv")) {
       fileInput.files = e.dataTransfer.files;
       showMsg(`Uploaded: ${file.name}`, "success", false); 
     } else {
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   fileInput.addEventListener("change", (e) => {
     const file = e.target.files[0];
-    if (file && file.name.endsWith(".csv")) {
+    if (file?.name?.endsWith(".csv")) {
       showMsg(`Uploaded: ${file.name}`, "success", false); 
     } else {
       showMsg("Please select a valid CSV file.", "error", false); 
@@ -67,8 +68,34 @@ document.addEventListener("DOMContentLoaded", () => {
       showMsg("Analysis completed!", "success", true); // The success message will be hidden after a timeout
     }, 1000);
     });
-  
 
-  
-  }
-);
+  uploadForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(uploadForm);
+
+    fetch("/upload/", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to analyze the file.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.error) {
+          showMsg(data.error, "error", false);
+        } else {
+          const insights = document.getElementById("insights");
+          insights.textContent = JSON.stringify(data.predictions, null, 2);
+          analysisResults.classList.remove("hidden");
+          showMsg("Analysis completed successfully!", "success", true);
+        }
+      })
+      .catch((error) => {
+        showMsg(error.message, "error", false);
+      });
+  });
+});

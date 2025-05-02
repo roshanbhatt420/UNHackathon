@@ -2,6 +2,11 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pathlib import Path
+
+# Add the project root to the Python path
+project_root = Path(__file__).resolve().parent
+sys.path.append(str(project_root))
 
 
 def main():

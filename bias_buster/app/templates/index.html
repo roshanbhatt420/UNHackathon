@@ -58,27 +58,20 @@
         <h2>Upload Your Dataset :</h2>
         <p>Drag and drop or upload your CSV file.</p>
 
-        <!-- Upload/ Drag & Drop box -->
-        <div class="upload-box" id="drop-zone">
-          <label for="fileInput" class="upload-image-label">
-            <img src="images/file.png" alt="Upload your dataset file" class="upload-image" id="uploadImage" />
-            <span class="click-up">Click to Upload...</span>
-          </label>
-          <input type="file" id="fileInput" class="file-input" accept=".csv" />
-        </div>
+        <form id="uploadForm" method="POST" enctype="multipart/form-data" action="/upload/">
+          <div class="upload-box" id="drop-zone">
+            <label for="fileInput" class="upload-image-label">
+              <img src="images/file.png" alt="Upload your dataset file" class="upload-image" id="uploadImage" />
+              <span class="click-up">Click to Upload...</span>
+            </label>
+            <input type="file" id="fileInput" name="file" class="file-input" accept=".csv" required />
+          </div>
+          <button type="submit" id="checkFairnessBtn" class="cta-button">Check Fairness</button>
+        </form>
 
-        <div class="msg hidden" id="msgBox">
-          <p id="fileName">No file uploaded yet</p>
-        </div>
-
-        <button id="checkFairnessBtn" class="cta-button">Check Fairness</button>
-
-        <!-- Called when onclick activation -->
         <div id="analysisResults" class="analysis-results hidden">
           <h3>Insights Generated</h3>
-          <p>Here will be the insights</p>
-          <p>Bias Checked Successfully</p>
-          <p>Here will be Recommendations</p>
+          <p id="insights">Here will be the insights</p>
         </div>
       </div>
     </section>

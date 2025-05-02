@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fairalyze AI - Case Study</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
 
     <!--  Included Google Font Poppins-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
     <!-- Included Global CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/project.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/project.css' %}" />
   </head>
   <body>
     <!-- Navigation Bar -->
     <header id="navbar" class="navbar">
       <div class="container nav-container">
-        <a href="index.html" class="logo"> <img src="images/logo.png" alt="Logo" class="nav-icons-logo" />Fairalyze AI</a>
+        <a href="{% url 'index' %}" class="logo">
+          <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
+        </a>
         <!--Responsive Section-->
         <button class="mobile-menu-btn" aria-label="Toggle menu">
           <span class="menu-line"></span>
@@ -25,16 +27,22 @@
         </button>
 
         <nav class="nav-links">
-          <a href="index.html" class="nav-link"> <img src="images/home.png" alt="Home" class="nav-icons" />Home </a>
-          <a href="project.html" class="nav-link"> <img src="images/lists.png" alt="Features" class="nav-icons" />Approach </a>
-          <a href="about.html" class="nav-link"> <img src="images/team.png" alt="Teams" class="nav-icons" />Team </a>
+          <a href="{% url 'index' %}" class="nav-link"></a>
+            <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
+          </a>
+          <a href="{% url 'project' %}" class="nav-link"></a>
+            <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
+          </a>
+          <a href="{% url 'about' %}" class="nav-link">
+            <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
+          </a>
         </nav>
       </div>
     </header>
 
     <!-- Introduction Section -->
-    <section class="project-header">
-      <div class="container">
+    <section class="project-header"></section>
+      <div class="container"></div>
         <h1 class="overview-title">Unlocking Fairness in Artificial Intelligence</h1>
         <p>
           Bias in data undermines the credibility and effectiveness of AI systems. At Fairalyze AI, we champion transparency and inclusivity by
@@ -45,8 +53,8 @@
     </section>
 
     <!-- Challenge Section -->
-    <section class="features-section fade-in-section">
-      <div class="container">
+    <section class="features-section fade-in-section"></section>
+      <div class="container"></div>
         <h2>The Challenge</h2>
         <p>
           Modern datasets often unintentionally reflect historical inequalities. If left unchecked, these biases can lead to unfair hiring practices,
@@ -57,8 +65,8 @@
     </section>
 
     <!-- Our Solution Section -->
-    <section class="how-it-works fade-in-section">
-      <div class="container">
+    <section class="how-it-works fade-in-section"></section>
+      <div class="container"></div>
         <h2>Our Solution</h2>
         <p>
           Fairalyze AI offers a holistic approach: sophisticated bias detection algorithms, dynamic visual reporting, and actionable recommendations.
@@ -69,21 +77,21 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section fade-in-section">
-      <div class="container">
+    <section class="features-section fade-in-section"></section>
+      <div class="container"></div>
         <h2>Key Features</h2>
-        <ul class="features-list">
-          <li class="feature-item">
+        <ul class="features-list"></ul>
+          <li class="feature-item"></li>
             ⚖️ <strong>Bias Detection:</strong> Analyze datasets for demographic imbalances across gender, ethnicity, and more.
           </li>
           <li class="feature-item">📊 <strong>Data Visualization:</strong> Generate clear, interactive charts to surface hidden disparities.</li>
           <li class="feature-item">
             🔍 <strong>Insightful Reports:</strong> Deliver professional reports outlining key findings and mitigation strategies.
           </li>
-          <li class="feature-item">
+          <li class="feature-item"></li>
             ⚙️ <strong>Automated Alerts:</strong> Instant notifications when fairness thresholds are breached, helping you respond proactively.
           </li>
-          <li class="feature-item">
+          <li class="feature-item"></li>
             🛡️ <strong>Privacy Focused:</strong> Built with data security as a top priority, respecting GDPR and related standards.
           </li>
         </ul>
@@ -104,16 +112,16 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="bias-cases">
-      <div class="case-study-container">
-        <header class="section-header">
+    <section class="bias-cases"></section>
+      <div class="case-study-container"></div>
+        <header class="section-header"></header>
           <h2>Documented AI Bias Cases</h2>
           <p class="subtitle">How Fairalyze Prevents These Industry Failures</p>
         </header>
 
-        <div class="case-study-grid">
+        <div class="case-study-grid"></div>
           <!-- Case Study 1 -->
-          <article class="case-study-card" id="gender-bias-case">
+          <article class="case-study-card" id="gender-bias-case"></article>
             <div class="case-study-image">
               <img
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
@@ -209,21 +217,21 @@
           <div class="footer-section">
             <h4>Quick Links</h4>
             <div class="footer-links">
-              <a href="index.html#overview">
+              <a href="{% url 'index' %}#overview">
                 <div class="link-icon">
-                  <img src="images/home1.png" alt="Home" class="nav-icons" />
+                  <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
                 </div>
                 <span>Home</span>
               </a>
-              <a href="project.html#approach">
+              <a href="{% url 'project' %}#approach">
                 <div class="link-icon">
-                  <img src="images/lists1.png" alt="Approach" class="nav-icons" />
+                  <img src="{% static 'images/lists1.png' %}" alt="Approach" class="nav-icons" />
                 </div>
                 <span>Approach</span>
               </a>
-              <a href="about.html#team">
-                <div class="link-icon">
-                  <img src="images/team1.png" alt="Team" class="nav-icons" />
+              <a href="{% url 'about' %}#team">
+                <div class="link-icon"></div>
+                  <img src="{% static 'images/team1.png' %}" alt="Team" class="nav-icons" />
                 </div>
                 <span>Team</span>
               </a>
@@ -233,7 +241,7 @@
           <div class="footer-section">
             <h4>Connect</h4>
             <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
-              <img alt="Discord-logo" src="images/discord.png" class="social-icon" />
+              <img alt="Discord-logo" src="{% static 'images/discord.png' %}" class="social-icon" />
               <span>Join Discord</span>
             </a>
           </div>
@@ -246,8 +254,8 @@
     </footer>
 
     <!-- Global Javascript for Animations-->
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <!-- JS of this specific page -->
-    <script src="js/project.js"></script>
+    <script src="{% static 'js/project.js' %}"></script>
   </body>
 </html>
