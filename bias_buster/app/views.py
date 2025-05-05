@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import pandas as pd
 # fetching gemini model from the ml_model_new directory
-from gemini_response.report_generation_by_ai import do_response
+from report_generation_by_ai import do_response
 
 # importing make_custom_data function from preprocessing_and_testing.py
 from bias_buster.ml_model_new.model_work.custom_data_test import process_csv_with_model
