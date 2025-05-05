@@ -45,6 +45,8 @@ Important Notes:
     print(response.text)
 
 
+return response.text
+
 
 
 if __name__ == "__main__":

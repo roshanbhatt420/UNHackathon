@@ -25,32 +25,19 @@ def project_page(request):
     # Render the project.html template
     return render(request, 'project.html')
 
-def check_page(request):
-    # Render the upload.html template
-    return render(request, 'check.html')
-
-
 @csrf_exempt
-def upload_and_analyze(request):
-    if request.method == 'POST':
-        # Parse uploaded CSV file
-        uploaded_file = request.FILES.get('file')
-        if not uploaded_file:
-            return JsonResponse({'error': 'No file uploaded'}, status=400)
-
-        try:
-            # Read the CSV file into a DataFrame
-            data = pd.read_csv(uploaded_file)
-
-            # Preprocess the data
-            custom_data = make_custom_data(data)
-
-            # Perform predictions using the model
-            predictions = model.predict(custom_data)
-
-            # Return predictions as JSON
-            return JsonResponse({'predictions': predictions.tolist()})
-        except Exception as e:
-            return JsonResponse({'error': str(e)}, status=500)
-
-    return JsonResponse({'error': 'Invalid request method'}, status=405)
+def check_page(request):
+    if request.method == 'POST' and request.FILES.get('csv_file'):
+        # Get the uploaded file
+        csv_file = request.FILES['csv_file']
+        
+        processed_data = process_csv_with_model(csv_file)
+        
+        # Summarize the processed data
+        summary = summarize_csv(csv_file)
+        
+        # Return the summary as JSON response
+        return JsonResponse({'summary': summary})
+    
+    # Render the check.html template for GET requests
+    return render(request, 'check.html')
