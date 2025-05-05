@@ -2,12 +2,14 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import pandas as pd
-from utils.preprocessing_uploaded_data import make_custom_data
-import joblib
+# fetching gemini model from the ml_model_new directory
+from gemini_response.report_generation_by_ai import do_response
 
-# Load the pre-trained model
-MODEL_PATH = 'ml_model_new/modelreport/sensitive_attribute_rf_model.joblib'
-model = joblib.load(MODEL_PATH)
+# importing make_custom_data function from preprocessing_and_testing.py
+from bias_buster.ml_model_new.model_work.custom_data_test import process_csv_with_model
+import joblib
+# from ml_model_new.model_work.custom_data_test import process_csv_with_model
+
 
 # Create your views here.
 
@@ -21,23 +23,15 @@ def about_page(request):
     return render(request, 'about.html')
 
 
-def project_page(request):
-    # Render the project.html template
-    return render(request, 'project.html')
+
 
 @csrf_exempt
 def check_page(request):
-    if request.method == 'POST' and request.FILES.get('csv_file'):
-        # Get the uploaded file
-        csv_file = request.FILES['csv_file']
-        
-        processed_data = process_csv_with_model(csv_file)
-        
-        # Summarize the processed data
-        summary = summarize_csv(csv_file)
-        
-        # Return the summary as JSON response
-        return JsonResponse({'result': summary})
-    
+    # handle uploaded csv file 
+    if request.method == 'POST' and request.FILES.get('file'):
+        uploaded_file = request.FILES['file']
+        # sending filr to the  gemini model for processing
+        summary = do_response(uploaded_file)
+        return JsonResponse({'summary': summary})
     # Render the check.html template for GET requests
     return render(request, 'check.html')

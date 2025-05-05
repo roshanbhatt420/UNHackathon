@@ -1,78 +1,112 @@
-/* Project Page Styles */
+:root {
+  --primary-color: #2563eb;
+  --accent-color: #1e40af;
+  --gray-color: #4b5563;
+  --light-bg: #f9fafb;
+  --fade-transition: 0.4s ease-in-out;
+  --font: 'Inter', sans-serif;
+  --primary-gradient: linear-gradient(to right, #1e1f26, #3a3f58, #2c2f46);
+  --shadow-glow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
 
-/* Case Study Header */
+/* -------------------- Global -------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: #12262d;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* -------------------- Header -------------------- */
 .project-header {
-  background: linear-gradient(to right, #f5f5f5, #eaeaea);
-  padding: 6rem 0;
+  background: var(--primary-gradient);
+  padding: 7rem 2rem;
   text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 .project-header p {
-  font-size: 1.2rem;
-  color: var(--gray-color);
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 500;
 }
-/* Core Styles */
+
+/* -------------------- Case Study Core -------------------- */
 .bias-cases {
-  background: #fafbfc;
-  padding: 4rem 0;
-  font-family: 'Inter', sans-serif;
+  background: var(--light-bg);
+  padding: 5rem 1rem;
 }
 
 .case-study-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  margin: auto;
+  padding: 0 1.5rem;
+  animation: fadeInUp 1s ease-in-out;
 }
 
+/* -------------------- Section Header -------------------- */
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
 .section-header h2 {
-  font-size: 2.2rem;
-  color: #1a365d;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  position: relative;
+  animation: glow 3s infinite alternate;
+}
+
+.section-header h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 10px auto 0;
+  border-radius: 6px;
 }
 
 .subtitle {
-  color: #4a5568;
+  color: #64748b;
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto;
+  line-height: 1.7;
 }
 
-/* Case Study Cards */
+/* -------------------- Case Study Cards -------------------- */
 .case-study-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .case-study-card {
-  background: white;
-  border-radius: 8px;
+  background: #fff;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-}
-
-@media (max-width: 768px) {
-  .case-study-card {
-    grid-template-columns: 1fr;
-  }
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .case-study-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12), var(--shadow-glow);
 }
 
 .case-study-image {
-  position: relative;
   min-height: 250px;
 }
 
@@ -80,17 +114,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.case-study-card:hover img {
+  transform: scale(1.05);
 }
 
 .case-study-content {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .case-study-content h3 {
-  font-size: 1.4rem;
-  color: #2d3748;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
 
 .case-study-details {
@@ -99,32 +141,23 @@
   gap: 2rem;
 }
 
-@media (max-width: 600px) {
-  .case-study-details {
-    grid-template-columns: 1fr;
-  }
-}
-
-.problem, .solution {
-  padding: 1rem 0;
-}
-
+/* -------------------- Problem & Solution -------------------- */
 .problem h4, .solution h4 {
   font-size: 1rem;
-  color: #4a5568;
+  color: #334155;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  font-weight: 700;
   margin-bottom: 1rem;
-  font-weight: 600;
 }
 
 .problem p {
-  color: #4a5568;
-  line-height: 1.6;
+  color: #475569;
+  line-height: 1.7;
 }
 
 .solution ul {
-  list-style-type: none;
+  list-style: none;
   padding-left: 0;
 }
 
@@ -132,89 +165,158 @@
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.8rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #1e293b;
 }
 
-.solution li:before {
-  content: "•";
+.solution li::before {
+  content: '✔';
   position: absolute;
   left: 0;
-  color: #4299e1;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
-.case-study-footer {
-  text-align: center;
-  margin-top: 3rem;
-  color: #718096;
-  font-size: 0.85rem;
-}
-
+/* -------------------- Features -------------------- */
 .features-list {
-  list-style: none;
   margin-top: 2rem;
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
 .feature-item {
-  background: #ffffffcc;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffffee;
+  padding: 1.8rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, background 0.4s ease;
+  cursor: pointer;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
 .feature-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transform: scale(1.06);
+  background: #edf2f7;
 }
 
 .feature-item strong {
   color: var(--primary-color);
+  font-weight: 700;
 }
 
-/* How It Works Section */
+/* -------------------- How It Works -------------------- */
 .how-it-works {
-  padding: 5rem 0;
-  background: linear-gradient(to right, #f5f5f5, #eaeaea);
-
+  padding: 6rem 1rem;
+  background: var(--primary-gradient);
+  text-align: center;
+  color: #fff;
 }
 
 .steps-list {
   margin-top: 2rem;
-  padding-left: 1.5rem;
+  list-style: decimal inside;
+  font-size: 1.15rem;
+  line-height: 1.8;
 }
 
-.steps-list li {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-
-/* Approach Section (Impact) */
+/* -------------------- Approach Section -------------------- */
 .approach-section {
-  background: linear-gradient(135deg, #f9f9f9, #e6f7ff);
-  padding: 5rem 0;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #f0f9ff, #e6fffa);
   text-align: center;
 }
 
 .approach-section p {
   max-width: 850px;
   margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: var(--gray-color);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #334155;
 }
 
-/* Fade In Animation */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+/* -------------------- Footer -------------------- */
+.case-study-footer {
+  text-align: center;
+  margin-top: 4rem;
+  color: #a0aec0;
+  font-size: 0.9rem;
+  padding-bottom: 3rem;
 }
 
-.fade-in-section.appear {
-  opacity: 1;
-  transform: translateY(0);
+/* -------------------- Animations -------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--accent-color);
+  }
+  to {
+    text-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--accent-color);
+  }
+}
+
+/* -------------------- Responsive Design -------------------- */
+@media (max-width: 992px) {
+  .case-study-card {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-details {
+    grid-template-columns: 1fr;
+  }
+
+  .project-header p {
+    font-size: 1.2rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-header {
+    padding: 4rem 1rem;
+  }
+
+  .project-header p {
+    font-size: 1rem;
+  }
+
+  .case-study-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .approach-section p {
+    font-size: 1rem;
+  }
+
+  .steps-list {
+    font-size: 1rem;
+  }
+
+  .feature-item {
+    padding: 1.2rem;
+  }
 }

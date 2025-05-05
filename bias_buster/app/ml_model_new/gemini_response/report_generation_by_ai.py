@@ -49,10 +49,11 @@ return response.text
 
 
 
-if __name__ == "__main__":
+def do_response(csv_file_path)
     # === 🔥 SET THESE ===   
-    api_key = "AIzaSyD0NwDy0GYqlBR2jK2SlyzdN9BeQWmMmrs"           # Your Gemini API Key
-    csv_file_path = "../data/heart.csv"       # Your CSV file path
+    api_key = "AIzaSyD0NwDy0GYqlBR2jK2SlyzdN9BeQWmMmrs"           # Your Gemini API Key      # Your CSV file path
 
     dataset_summary = summarize_csv(csv_file_path)
-    generate_conclusion(api_key, dataset_summary)
+    summary=generate_conclusion(api_key, dataset_summary)
+    return summary
+    

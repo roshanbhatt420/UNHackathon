@@ -35,9 +35,6 @@
           <a href="{% url 'check' %}" class="nav-link">
               <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
           </a>
-          <a href="{% url 'project' %}" class="nav-link">
-              <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
-          </a>
           <a href="{% url 'about' %}" class="nav-link">
               <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
           </a>
@@ -52,7 +49,7 @@
         <p>
           At Fairalyze AI, our mission is to empower developers and organizations to create fair and unbiased AI systems...
         </p>
-        <a href="{% url 'project' %}" class="cta-button">Learn About Our Approach</a>
+        <a href="{% url 'index' %}" class="cta-button">Learn About Our Approach</a>
       </div>
     </section>
 
@@ -155,11 +152,12 @@
                 </div>
                 <span>Home</span>
               </a>
-              <a href="{% url 'project' %}#approach">
+              <!-- adding quick links for check -->
+              <a href="{% url 'check' %}#upload-section">
                 <div class="link-icon">
-                  <img src="{% static 'images/lists1.png' %}" alt="Approach" class="nav-icons" />
+                  <img src="{% static 'images/lists1.png' %}" alt="Check" class="nav-icons" />
                 </div>
-                <span>Approach</span>
+                <span>Check Fairness</span>
               </a>
               <a href="{% url 'about' %}#team">
                 <div class="link-icon">

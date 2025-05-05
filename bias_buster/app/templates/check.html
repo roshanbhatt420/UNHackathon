@@ -32,9 +32,6 @@
                     <a href="{% url 'check' %}" class="nav-link">
                         <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
                     </a>
-                    <a href="{% url 'project' %}" class="nav-link">
-                        <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
-                    </a>
                     <a href="{% url 'about' %}" class="nav-link">
                         <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
                     </a>
@@ -70,9 +67,57 @@
                 {% endif %}
             </div>
         </section>
-        <section id="footer" class="footer fade-in-section">
-            <div class="container">
-                <p>&copy; 2023 Fairalyze AI. All rights reserved.</p>
+        <footer class="footer">
+            <div class="footer-content">
+              <div class="footer-grid">
+                <div class="footer-section">
+                  <h4>Fairalyze AI</h4>
+                  <div class="sdg-badges">
+                    <span class="sdg-badge sdg-5">SDG 5</span>
+                    <span class="sdg-badge sdg-10">SDG 10</span>
+                  </div>
+                  <p class="hackathon-mention">As a part of GNEC Hackathon 2025</p>
+                </div>
+      
+                <div class="footer-section">
+                  <h4>Quick Links</h4>
+                  <div class="footer-links">
+                    <a href="{% url 'index' %}#overview">
+                      <div class="link-icon">
+                        <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
+                      </div>
+                      <span>Home</span>
+                    
+                    </a>
+                    <!-- adding quick links for check fairness also -->
+                    <a href="{% url 'check' %}#features">
+                      <div class="link-icon">
+                        <img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />
+                      </div>
+                      <span>Check Fairness</span>
+                    </a>
+      
+                    <a href="{% url 'about' %}#team">
+                      <div class="link-icon">
+                        <img src="{% static 'images/team1.png' %}" alt="Team" class="nav-icons" />
+                      </div>
+                      <span>Team</span>
+                    </a>
+                  </div>
+                </div>
+      
+                <div class="footer-section">
+                  <h4>Connect</h4>
+                  <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
+                    <img alt="Discord-logo" src="{% static 'images/discord.png' %}" class="social-icon" />
+                    <span>Join Discord</span>
+                  </a>
+                </div>
+              </div>
+      
+              <div class="footer-copyright">
+                <p>&copy; 2025 Fairalyze AI | GNEC Hackathon Project</p>
+              </div>
             </div>
-        </section>  
+          </footer>
  </html>

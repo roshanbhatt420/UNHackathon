@@ -1,11 +1,10 @@
 import pandas as pd 
-from preprocessing_and_testing import make_custom_data
+# importing make_custom_data function from preprocessing_and_testing.py
 
 from scipy.stats import entropy
 import joblib
-csv_file_path = "../data/heart.csv"
-
-
+from preprocessing_and_testing import make_custom_data
+csv_file_path = "../data/heart.csv"  # Path to your CSV file
 def process_csv_with_model(csv_file_path):
   data = pd.read_csv(csv_file_path)
   data = data.dropna()  # Drop rows with NaN values
@@ -91,3 +90,4 @@ def process_csv_with_model(csv_file_path):
 
   return all_metrics
 
+print(process_csv_with_model(csv_file_path))
