@@ -3,12 +3,13 @@ from preprocessing_and_testing import make_custom_data
 
 from scipy.stats import entropy
 import joblib
+csv_file_path = "../data/heart.csv"
+
 
 def process_csv_with_model(csv_file_path):
   data = pd.read_csv(csv_file_path)
   data = data.dropna()  # Drop rows with NaN values
   custom_data = make_custom_data(data)
-  print(custom_data)
 
   # Load the model
   model = joblib.load("../modelreport/sensitive_attribute_rf_model.joblib")
@@ -89,3 +90,4 @@ def process_csv_with_model(csv_file_path):
     all_metrics[feature_name] = metrics
 
   return all_metrics
+

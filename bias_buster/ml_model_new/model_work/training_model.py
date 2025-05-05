@@ -51,11 +51,9 @@ model_pipeline.fit(xtrain, ytrain)
 
 # Predict on test set
 ypred = model_pipeline.predict(xtest)
-print("Predictions:", ypred)
-
 # Classification report
 report = classification_report(ytest, ypred, target_names=['no_sensitive', 'sensitive'], output_dict=True)
-print(report)
+
 with open("modelreport/class_report.txt", "w") as f:
     json.dump(report, f)
 
@@ -69,14 +67,14 @@ with open("modelreport/class_report.txt", "w") as f:
 # plt.show()
 
 import os
-import pickle
+# import pickle
 
-# Ensure the directory exists
-os.makedirs("modelreport", exist_ok=True)
+# # Ensure the directory exists
+# os.makedirs("modelreport", exist_ok=True)
 
-# Define the model path
-model_path = "modelreport/sensitive_attribute_rf_model.joblib"
-print(f"Model path: {model_path}")
-# dumping model with joblib
-joblib.dump(model_pipeline, model_path)
-print(f"Model saved to {model_path}")   
+# # Define the model path
+# model_path = "modelreport/sensitive_attribute_rf_model.joblib"
+# # print(f"Model path: {model_path}")
+# # dumping model with joblib
+# joblib.dump(model_pipeline, model_path)
+# print(f"Model saved to {model_path}")   

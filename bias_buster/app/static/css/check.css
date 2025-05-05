@@ -111,6 +111,17 @@
     opacity: 0.6;
     transition: opacity 0.4s ease;
   }
+  .upload-button {
+    display: inline-block;  
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  } 
   
   .click-up{
    margin: 10px;

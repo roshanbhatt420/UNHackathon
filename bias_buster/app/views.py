@@ -37,7 +37,7 @@ def check_page(request):
         summary = summarize_csv(csv_file)
         
         # Return the summary as JSON response
-        return JsonResponse({'summary': summary})
+        return JsonResponse({'result': summary})
     
     # Render the check.html template for GET requests
     return render(request, 'check.html')
