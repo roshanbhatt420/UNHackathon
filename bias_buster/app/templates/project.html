@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,20 +7,21 @@
     <title>Fairalyze AI - Case Study</title>
     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
 
-    <!--  Included Google Font Poppins-->
+    <!-- Google Font: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    <!-- Included Global CSS -->
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'css/project.css' %}" />
   </head>
   <body>
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <header id="navbar" class="navbar">
       <div class="container nav-container">
         <a href="{% url 'index' %}" class="logo">
           <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
         </a>
-        <!--Responsive Section-->
+
         <button class="mobile-menu-btn" aria-label="Toggle menu">
           <span class="menu-line"></span>
           <span class="menu-line"></span>
@@ -27,73 +29,57 @@
         </button>
 
         <nav class="nav-links">
-          <a href="{% url 'index' %}" class="nav-link"></a>
-            <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
+          <a href="{% url 'index' %}" class="nav-link">
+              <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
           </a>
-          <a href="{% url 'project' %}" class="nav-link"></a>
-            <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
+          <a href="{% url 'check' %}" class="nav-link">
+              <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
+          </a>
+          <a href="{% url 'project' %}" class="nav-link">
+              <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
           </a>
           <a href="{% url 'about' %}" class="nav-link">
-            <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
+              <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
           </a>
-        </nav>
+      </nav>
       </div>
     </header>
 
     <!-- Introduction Section -->
-    <section class="project-header"></section>
-      <div class="container"></div>
+    <section class="project-header">
+      <div class="container">
         <h1 class="overview-title">Unlocking Fairness in Artificial Intelligence</h1>
-        <p>
-          Bias in data undermines the credibility and effectiveness of AI systems. At Fairalyze AI, we champion transparency and inclusivity by
-          providing powerful tools to detect, visualize, and mitigate bias before it becomes a problem.
-        </p>
+        <p>Bias in data undermines the credibility and effectiveness of AI systems. At Fairalyze AI, we champion transparency and inclusivity by providing powerful tools to detect, visualize, and mitigate bias before it becomes a problem.</p>
         <p>Our mission is simple: empower organizations to build AI that serves everyone equally, without hidden distortions.</p>
       </div>
     </section>
 
     <!-- Challenge Section -->
-    <section class="features-section fade-in-section"></section>
-      <div class="container"></div>
+    <section class="features-section fade-in-section">
+      <div class="container">
         <h2>The Challenge</h2>
-        <p>
-          Modern datasets often unintentionally reflect historical inequalities. If left unchecked, these biases can lead to unfair hiring practices,
-          financial discrimination, and skewed AI-driven recommendations. Recognizing bias early is essential to creating truly ethical, reliable AI
-          systems.
-        </p>
+        <p>Modern datasets often unintentionally reflect historical inequalities. If left unchecked, these biases can lead to unfair hiring practices, financial discrimination, and skewed AI-driven recommendations. Recognizing bias early is essential to creating truly ethical, reliable AI systems.</p>
       </div>
     </section>
 
     <!-- Our Solution Section -->
-    <section class="how-it-works fade-in-section"></section>
-      <div class="container"></div>
+    <section class="how-it-works fade-in-section">
+      <div class="container">
         <h2>Our Solution</h2>
-        <p>
-          Fairalyze AI offers a holistic approach: sophisticated bias detection algorithms, dynamic visual reporting, and actionable recommendations.
-          Built on globally recognized fairness principles like those from UNESCO, our platform ensures your AI initiatives align with ethical
-          standards from day one.
-        </p>
+        <p>Fairalyze AI offers a holistic approach: sophisticated bias detection algorithms, dynamic visual reporting, and actionable recommendations. Built on globally recognized fairness principles like those from UNESCO, our platform ensures your AI initiatives align with ethical standards from day one.</p>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section fade-in-section"></section>
-      <div class="container"></div>
+    <section class="features-section fade-in-section">
+      <div class="container">
         <h2>Key Features</h2>
-        <ul class="features-list"></ul>
-          <li class="feature-item"></li>
-            ⚖️ <strong>Bias Detection:</strong> Analyze datasets for demographic imbalances across gender, ethnicity, and more.
-          </li>
+        <ul class="features-list">
+          <li class="feature-item">⚖️ <strong>Bias Detection:</strong> Analyze datasets for demographic imbalances across gender, ethnicity, and more.</li>
           <li class="feature-item">📊 <strong>Data Visualization:</strong> Generate clear, interactive charts to surface hidden disparities.</li>
-          <li class="feature-item">
-            🔍 <strong>Insightful Reports:</strong> Deliver professional reports outlining key findings and mitigation strategies.
-          </li>
-          <li class="feature-item"></li>
-            ⚙️ <strong>Automated Alerts:</strong> Instant notifications when fairness thresholds are breached, helping you respond proactively.
-          </li>
-          <li class="feature-item"></li>
-            🛡️ <strong>Privacy Focused:</strong> Built with data security as a top priority, respecting GDPR and related standards.
-          </li>
+          <li class="feature-item">🔍 <strong>Insightful Reports:</strong> Deliver professional reports outlining key findings and mitigation strategies.</li>
+          <li class="feature-item">⚙️ <strong>Automated Alerts:</strong> Instant notifications when fairness thresholds are breached, helping you respond proactively.</li>
+          <li class="feature-item">🛡️ <strong>Privacy Focused:</strong> Built with data security as a top priority, respecting GDPR and related standards.</li>
         </ul>
       </div>
     </section>
@@ -111,33 +97,26 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="bias-cases"></section>
-      <div class="case-study-container"></div>
-        <header class="section-header"></header>
+    <!-- Case Studies -->
+    <section class="bias-cases">
+      <div class="case-study-container">
+        <header class="section-header">
           <h2>Documented AI Bias Cases</h2>
           <p class="subtitle">How Fairalyze Prevents These Industry Failures</p>
         </header>
 
-        <div class="case-study-grid"></div>
+        <div class="case-study-grid">
           <!-- Case Study 1 -->
-          <article class="case-study-card" id="gender-bias-case"></article>
+          <article class="case-study-card" id="gender-bias-case">
             <div class="case-study-image">
-              <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Gender bias in AI"
-                loading="lazy"
-              />
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gender bias in AI" loading="lazy" />
             </div>
             <div class="case-study-content">
               <h3>Amazon Recruitment Algorithm (2018)</h3>
               <div class="case-study-details">
                 <div class="problem">
                   <h4>Documented Issue</h4>
-                  <p>
-                    The AI system penalized resumes containing words like "women's" (e.g., "women's chess club captain") and downgraded graduates of
-                    all-women's colleges.
-                  </p>
+                  <p>The AI system penalized resumes containing words like "women's" and downgraded graduates of all-women's colleges.</p>
                 </div>
                 <div class="solution">
                   <h4>Fairalyze Prevention</h4>
@@ -154,20 +133,14 @@
           <!-- Case Study 2 -->
           <article class="case-study-card" id="racial-bias-case">
             <div class="case-study-image">
-              <img
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="Racial bias in lending"
-                loading="lazy"
-              />
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Racial bias in lending" loading="lazy" />
             </div>
             <div class="case-study-content">
               <h3>Algorithmic Lending Discrimination (2022)</h3>
               <div class="case-study-details">
                 <div class="problem">
                   <h4>Documented Issue</h4>
-                  <p>
-                    FDIC report showed minority applicants faced 40% higher denial rates despite similar financial profiles to approved applicants.
-                  </p>
+                  <p>FDIC report showed minority applicants faced 40% higher denial rates despite similar financial profiles to approved applicants.</p>
                 </div>
                 <div class="solution">
                   <h4>Fairalyze Prevention</h4>
@@ -193,10 +166,9 @@
       <div class="container">
         <h2>Our Impact</h2>
         <p>
-          Fairalyze AI is pioneering bias detection for ethical AI systems, directly advancing SDG 5 (Gender Equality) and SDG 10 (Reduced
-          Inequalities). Our technology identifies 12+ critical bias patterns—from gendered language in hiring algorithms to racial disparities in
-          loan approvals—helping developers build AI that treats everyone equally. While still in prototype phase, our testing shows 92% accuracy in
-          detecting these biases in synthetic datasets, proving our potential to create real-world impact.
+          Fairalyze AI is pioneering bias detection for ethical AI systems, directly advancing SDG 5 (Gender Equality) and SDG 10 (Reduced Inequalities). 
+          Our technology identifies 12+ critical bias patterns—helping developers build AI that treats everyone equally. 
+          While still in prototype phase, our testing shows 92% accuracy in detecting these biases in synthetic datasets.
         </p>
       </div>
     </section>
@@ -218,44 +190,21 @@
             <h4>Quick Links</h4>
             <div class="footer-links">
               <a href="{% url 'index' %}#overview">
-                <div class="link-icon">
-                  <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
-                </div>
+                <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
                 <span>Home</span>
               </a>
               <a href="{% url 'project' %}#approach">
-                <div class="link-icon">
-                  <img src="{% static 'images/lists1.png' %}" alt="Approach" class="nav-icons" />
-                </div>
+                <img src="{% static 'images/lists1.png' %}" alt="Approach" class="nav-icons" />
                 <span>Approach</span>
               </a>
               <a href="{% url 'about' %}#team">
-                <div class="link-icon"></div>
-                  <img src="{% static 'images/team1.png' %}" alt="Team" class="nav-icons" />
-                </div>
+                <img src="{% static 'images/team.png' %}" alt="Team" class="nav-icons" />
                 <span>Team</span>
               </a>
             </div>
           </div>
-
-          <div class="footer-section">
-            <h4>Connect</h4>
-            <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
-              <img alt="Discord-logo" src="{% static 'images/discord.png' %}" class="social-icon" />
-              <span>Join Discord</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-copyright">
-          <p>&copy; 2025 Fairalyze AI | GNEC Hackathon Project</p>
         </div>
       </div>
     </footer>
-
-    <!-- Global Javascript for Animations-->
-    <script src="{% static 'js/script.js' %}"></script>
-    <!-- JS of this specific page -->
-    <script src="{% static 'js/project.js' %}"></script>
   </body>
 </html>

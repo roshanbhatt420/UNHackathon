@@ -1,0 +1,72 @@
+{% load static %}
+<!-- making uploading section  -->
+ <html> 
+    <head>
+
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+        <meta charset="UTF-8">
+        <link rel="script" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <link rel="stylesheet" href="{% static 'css/check.css'%}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
+    </head>
+    <body>
+        <header id="navbar" class="navbar">
+            <div class="container nav-container">
+                <a href="{% url 'index' %}" class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+
+                <nav class="nav-links">
+                    <a href="{% url 'index' %}" class="nav-link">
+                        <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
+                    </a>
+                    <a href="{% url 'check' %}" class="nav-link">
+                        <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
+                    </a>
+                    <a href="{% url 'project' %}" class="nav-link">
+                        <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
+                    </a>
+                    <a href="{% url 'about' %}" class="nav-link">
+                        <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Upload Section -->
+        <section id="upload-section" class="upload-section fade-in-section">
+            <div class="container">
+                <h1>Upload Your Dataset</h1>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="file" accept=".csv, .xlsx, .xls, .json, .txt, .parquet, .feather, .pickle, .pkl, .dta, .sav, .sas7bdat, .spss, .dta, .rdata, .rda" required />
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </section>
+<!-- result sections -->
+        <section id="result-section" class="result-section fade-in-section">
+            <div class="container">
+                <h1>Results</h1>
+                {% if result %}
+                    <p>{{ result }}</p>
+                {% else %}
+                    <p>No results available.</p>
+                {% endif %}
+            </div>
+        </section>
+        <section id="footer" class="footer fade-in-section">
+            <div class="container">
+                <p>&copy; 2023 Fairalyze AI. All rights reserved.</p>
+            </div>
+        </section>  
+ </html>

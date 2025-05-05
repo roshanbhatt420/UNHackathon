@@ -6,7 +6,7 @@ from utils.preprocessing_uploaded_data import make_custom_data
 import joblib
 
 # Load the pre-trained model
-MODEL_PATH = 'bias_buster/ml_model/modelreport/sensitive_attribute_rf_model.joblib'
+MODEL_PATH = 'ml_model_new/modelreport/sensitive_attribute_rf_model.joblib'
 model = joblib.load(MODEL_PATH)
 
 # Create your views here.
@@ -24,6 +24,10 @@ def about_page(request):
 def project_page(request):
     # Render the project.html template
     return render(request, 'project.html')
+
+def check_page(request):
+    # Render the upload.html template
+    return render(request, 'check.html')
 
 
 @csrf_exempt

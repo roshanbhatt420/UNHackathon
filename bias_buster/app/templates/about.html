@@ -1,27 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale =1.0"  />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Fairalyze AI - About Us</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
 
-     <!-- included Google Fonts Poppins -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Included Global CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="css/about.css" />
+    <!-- Google Fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/about.css' %}" />
   </head>
   <body>
-    <!-- Navigation Bar (Logo and Links) -->
+    <!-- Navigation Bar -->
     <header id="navbar" class="navbar">
       <div class="container nav-container">
-        <a href="index.html" class="logo"> <img src="images/logo.png" alt="Logo" class="nav-icons-logo" />Fairalyze AI</a>
-        <!--Responsive Section-->
+        <a href="{% url 'index' %}" class="logo">
+          <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />
+          Fairalyze AI
+        </a>
         <button class="mobile-menu-btn" aria-label="Toggle menu">
           <span class="menu-line"></span>
           <span class="menu-line"></span>
@@ -29,10 +29,19 @@
         </button>
 
         <nav class="nav-links">
-          <a href="index.html" class="nav-link"> <img src="images/home.png" alt="Home" class="nav-icons" />Home </a>
-          <a href="project.html" class="nav-link"> <img src="images/lists.png" alt="Features" class="nav-icons" />Approach </a>
-          <a href="about.html" class="nav-link"> <img src="images/team.png" alt="Teams" class="nav-icons" />Team </a>
-        </nav>
+          <a href="{% url 'index' %}" class="nav-link">
+              <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
+          </a>
+          <a href="{% url 'check' %}" class="nav-link">
+              <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
+          </a>
+          <a href="{% url 'project' %}" class="nav-link">
+              <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Approach
+          </a>
+          <a href="{% url 'about' %}" class="nav-link">
+              <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
+          </a>
+      </nav>
       </div>
     </header>
 
@@ -41,126 +50,91 @@
       <div class="container">
         <h1>Our Mission</h1>
         <p>
-          At Fairalyze AI, our mission is to empower developers and
-          organizations to create fair and unbiased AI systems. We believe that
-          technology should work for everyone, and we strive to make ethical AI
-          the standard. We are committed to leading the charge towards a more
-          equitable and transparent AI future.
+          At Fairalyze AI, our mission is to empower developers and organizations to create fair and unbiased AI systems...
         </p>
-        <!-- Call to Action Button -->
-        <a href="project.html" class="cta-button">Learn About Our Approach</a>
+        <a href="{% url 'project' %}" class="cta-button">Learn About Our Approach</a>
       </div>
     </section>
 
- <!-- Commitment Section -->
-<section class="commitment-section fade-in-section">
-  <div class="container">
-    <h2>Our Core Commitments</h2>
-    <div class="commitment-cards">
-      <div class="commitment">
-        <img src="images/transparency.png" alt="Transparency">
-        <h3>Radical Transparency</h3>
-        <p>All fairness assessments include explainable AI techniques to show exactly how biases are detected</p>
-      </div>
-      <div class="commitment">
-        <img src="images/SDG-logo.png" alt="sdg-logo" class="sdg-logo">
-        <h3>SDG-Aligned Development</h3>
-        <p>Directly supporting UN Sustainable Development Goals 5 (Gender Equality), 8 (Decent Work), and 10 (Reduced Inequalities)</p>
-      </div>
-      <div class="commitment">
-        <img src="images/education.png" alt="Education">
-        <h3>Developer Education</h3>
-        <p>Free resources and tutorials on ethical AI practices for underrepresented communities</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Vision Section -->
-<section class="vision-section fade-in-section">
-  <div class="container">
-    <h2>Our Vision for Ethical AI</h2>
-    <div class="vision-timeline">
-      <div class="vision-phase">
-        <div class="phase-number">1</div>
-        <h3>Bias Detection (2024)</h3>
-        <p>Establish robust detection frameworks for common bias patterns in hiring and finance</p>
-      </div>
-      <div class="vision-phase">
-        <div class="phase-number">2</div>
-        <h3>Prevention Tools (2025)</h3>
-        <p>Develop real-time bias prevention during model training</p>
-      </div>
-      <div class="vision-phase">
-        <div class="phase-number">3</div>
-        <h3>Global Standards (2026+)</h3>
-        <p>Partner with institutions to create region-specific fairness benchmarks</p>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- Team Section -->
-    <section class="team-section ">
+    <!-- Commitments -->
+    <section class="commitment-section fade-in-section">
       <div class="container">
-        <h2 class = "teams-head">Meet the Team</h2>
-        <div class="team-cards">
-          <div class="team-member">
-            <img src="images/puspa.jpeg" alt="Puspa" class="team-photo" />
-            <h3>Puspa Regmi</h3>
-            <p class="role">Full Stack Developer</p>
-            <p>
-              Puspa contributed to Fairalyze AI by developing reliable backend
-              systems and integrated interfaces to support unbiased AI
-              solutions. When she’s not building robust systems, she’s busy
-              optimizing processes for maximum impact.
-            </p>
-            <a
-              href="https://www.linkedin.com/in/herodebris/"
-              class="linkedin-link"
-              target="_blank"
-              >LinkedIn</a
-            >
+        <h2>Our Core Commitments</h2>
+        <div class="commitment-cards">
+          <div class="commitment">
+            <img src="{% static 'images/transparency.png' %}" alt="Transparency">
+            <h3>Radical Transparency</h3>
+            <p>All fairness assessments include explainable AI techniques...</p>
           </div>
-          <div class="team-member">
-            <img src="images/roshan.jpeg" alt="Roshan" class="team-photo" />
-            <h3>Roshan Bhatta</h3>
-            <p class="role">ML Specialist</p>
-            <p>
-              Roshan worked on Fairalyze AI to create algorithms that detect and
-              address data biases, ensuring fair AI model development. He’s
-              passionate about making AI more inclusive and efficient, one
-              algorithm at a time.
-            </p>
-            <a
-              href="https://www.linkedin.com/in/roshanbhatta605/"
-              class="linkedin-link"
-              target="_blank"
-              >LinkedIn</a
-            >
+          <div class="commitment">
+            <img src="{% static 'images/SDG-logo.png' %}" alt="sdg-logo" class="sdg-logo">
+            <h3>SDG-Aligned Development</h3>
+            <p>Directly supporting UN Sustainable Development Goals...</p>
           </div>
-          <div class="team-member">
-            <img src="images/anup.jpeg" alt="Anup" class="team-photo" />
-            <h3>Anup Paudel</h3>
-            <p class="role">Front-end Developer</p>
-            <p>
-              Anup contributed to Fairalyze AI by building clean, accessible
-              interfaces and ensuring a smooth, user-friendly experience
-              throughout the platform. He is committed to creating designs that
-              are both beautiful and intuitive.
-            </p>
-            <a
-              href="https://www.linkedin.com/in/anuppaudel25/"
-              class="linkedin-link"
-              target="_blank"
-              >LinkedIn</a
-            >
+          <div class="commitment">
+            <img src="{% static 'images/education.png' %}" alt="Education">
+            <h3>Developer Education</h3>
+            <p>Free resources and tutorials on ethical AI practices...</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Vision -->
+    <section class="vision-section fade-in-section">
+      <div class="container">
+        <h2>Our Vision for Ethical AI</h2>
+        <div class="vision-timeline">
+          <div class="vision-phase">
+            <div class="phase-number">1</div>
+            <h3>Bias Detection (2024)</h3>
+            <p>Establish robust detection frameworks...</p>
+          </div>
+          <div class="vision-phase">
+            <div class="phase-number">2</div>
+            <h3>Prevention Tools (2025)</h3>
+            <p>Develop real-time bias prevention during model training</p>
+          </div>
+          <div class="vision-phase">
+            <div class="phase-number">3</div>
+            <h3>Global Standards (2026+)</h3>
+            <p>Partner with institutions...</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer with links, contact, and credits -->
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <h2 class="teams-head">Meet the Team</h2>
+        <div class="team-cards">
+          <div class="team-member">
+            <img src="{% static 'images/puspa.jpeg' %}" alt="Puspa" class="team-photo" />
+            <h3>Puspa Regmi</h3>
+            <p class="role">Full Stack Developer</p>
+            <p>Puspa contributed to Fairalyze AI by developing reliable backend systems...</p>
+            <a href="https://www.linkedin.com/in/herodebris/" target="_blank" class="linkedin-link">LinkedIn</a>
+          </div>
+          <div class="team-member">
+            <img src="{% static 'images/roshan.jpeg' %}" alt="Roshan" class="team-photo" />
+            <h3>Roshan Bhatta</h3>
+            <p class="role">ML Specialist</p>
+            <p>Roshan worked on Fairalyze AI to create algorithms that detect and address data biases...</p>
+            <a href="https://www.linkedin.com/in/roshanbhatta605/" target="_blank" class="linkedin-link">LinkedIn</a>
+          </div>
+          <div class="team-member">
+            <img src="{% static 'images/anup.jpeg' %}" alt="Anup" class="team-photo" />
+            <h3>Anup Paudel</h3>
+            <p class="role">Front-end Developer</p>
+            <p>Anup contributed to Fairalyze AI by building clean, accessible interfaces...</p>
+            <a href="https://www.linkedin.com/in/anuppaudel25/" target="_blank" class="linkedin-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-grid">
@@ -172,49 +146,45 @@
             </div>
             <p class="hackathon-mention">As a part of GNEC Hackathon 2025</p>
           </div>
-
           <div class="footer-section">
             <h4>Quick Links</h4>
             <div class="footer-links">
-              <a href="index.html#overview">
+              <a href="{% url 'index' %}#overview">
                 <div class="link-icon">
-                  <img src="images/home1.png" alt="Home" class="nav-icons" />
+                  <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
                 </div>
                 <span>Home</span>
               </a>
-              <a href="project.html#approach">
+              <a href="{% url 'project' %}#approach">
                 <div class="link-icon">
-                  <img src="images/lists1.png" alt="Approach" class="nav-icons" />
+                  <img src="{% static 'images/lists1.png' %}" alt="Approach" class="nav-icons" />
                 </div>
                 <span>Approach</span>
               </a>
-              <a href="about.html#team">
+              <a href="{% url 'about' %}#team">
                 <div class="link-icon">
-                  <img src="images/team1.png" alt="Team" class="nav-icons" />
+                  <img src="{% static 'images/team1.png' %}" alt="Team" class="nav-icons" />
                 </div>
                 <span>Team</span>
               </a>
             </div>
           </div>
-
           <div class="footer-section">
             <h4>Connect</h4>
             <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
-              <img alt="Discord-logo" src="images/discord.png" class="social-icon" />
+              <img src="{% static 'images/discord.png' %}" alt="Discord-logo" class="social-icon" />
               <span>Join Discord</span>
             </a>
           </div>
         </div>
-
         <div class="footer-copyright">
           <p>&copy; 2025 Fairalyze AI | GNEC Hackathon Project</p>
         </div>
       </div>
     </footer>
 
-    <!-- Global Javascript for Animations-->
-    <script src="js/script.js"></script>
-    <!-- JS of this specific page -->
-    <script src="js/about.js"></script>
+    <!-- Scripts -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/about.js' %}"></script>
   </body>
 </html>
