@@ -65,6 +65,11 @@
                 {% else %}
                     <p>No results available.</p>
                 {% endif %}
+                {% if result_model %}
+                    <p>{{ result_model }}</p>
+                {% else %}
+                    <p>No results available.</p>
+                {% endif %}
             </div>
         </section>
         <footer class="footer">
