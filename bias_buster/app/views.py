@@ -21,22 +21,34 @@ def about_page(request):
 
 @csrf_exempt
 def check_page(request):
-    # handle uploaded csv file 
+    # Handle uploaded CSV file
     if request.method == 'POST' and request.FILES.get('file'):
         uploaded_file = request.FILES['file']
 
         # Check if the uploaded file is empty
         if uploaded_file.size == 0:
-            return render(request, 'check.html', { 'error': 'The uploaded file is empty. Please upload a valid CSV file.' })
+            return render(request, 'check.html', {'error': 'The uploaded file is empty. Please upload a valid CSV file.'})
 
         try:
-            # sending file to the gemini model for processing
-            
-            model_response = process_csv_with_model(uploaded_file)
-            summary = do_response(uploaded_file)
-            return render(request, 'check.html', { 'result_model': model_response, 'result': summary })
+            # Process the uploaded file
+            result = process_uploaded_file(uploaded_file)
+            return render(request, 'check.html', result)
         except Exception as e:
-            return render(request, 'check.html', { 'error': f'An error occurred while processing the file: {str(e)}' })
+            return render(request, 'check.html', {'error': f'An error occurred while processing the file: {str(e)}'})
 
     # Render the check.html template for GET requests
     return render(request, 'check.html')
+
+
+def process_uploaded_file(uploaded_file):
+    """
+    Process the uploaded file using the gemini model and custom data processing.
+    Returns a dictionary with the results or error messages.
+    """
+    try:
+        # Sending file to the gemini model for processing
+        summary = do_response(uploaded_file)
+        model_response = process_csv_with_model(uploaded_file)
+        return {'result_model': model_response, 'result': summary}
+    except Exception as e:
+        raise Exception(f"Error during file processing: {str(e)}")
