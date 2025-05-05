@@ -1,6 +1,6 @@
 /* Upload Section */
 
-.upload-section {
+#upload-section {
     text-align: center;
     padding: 50px 50px;
     background: linear-gradient(to right, #1e1f26, #3a3f58, #2c2f46);

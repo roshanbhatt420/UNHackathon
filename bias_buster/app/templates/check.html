@@ -7,9 +7,9 @@
         <meta charset="UTF-8">
         <link rel="script" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <link rel="stylesheet" href="{% static 'css/check.css'%}">
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/check.css'%}">
 
 
     </head>
@@ -44,16 +44,22 @@
 
         <!-- Upload Section -->
         <section id="upload-section" class="upload-section fade-in-section">
-            <div class="container">
-                <h1>Upload Your Dataset</h1>
-                <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <input type="file" name="file" accept=".csv, .xlsx, .xls, .json, .txt, .parquet, .feather, .pickle, .pkl, .dta, .sav, .sas7bdat, .spss, .dta, .rdata, .rda" required />
-                    <button type="submit">Upload</button>
-                </form>
+            <div class="upload-container">
+            <h1>Upload Your Dataset</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="upload-box">
+                <label for="file-upload" class="upload-image-label">
+                    <img src="{% static 'images/upload-icon.png' %}" alt="Upload Icon" class="upload-image">
+                    <p class="click-up">Click to upload your file</p>
+                </label>
+                <input id="file-upload" type="file" name="file" class="file-input" accept=".csv, .xlsx, .xls, .json, .txt, .parquet, .feather, .pickle, .pkl, .dta, .sav, .sas7bdat, .spss, .dta, .rdata, .rda" required>
+                </div>
+                <button type="submit" class="upload-button">Upload</button>
+            </form>
+            <div class="msg hidden" id="upload-msg"></div>
             </div>
         </section>
-<!-- result sections -->
         <section id="result-section" class="result-section fade-in-section">
             <div class="container">
                 <h1>Results</h1>
