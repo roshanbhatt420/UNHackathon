@@ -45,11 +45,11 @@ Important Notes:
     print(response.text)
 
 
-return response.text
+    return response.text
 
 
 
-def do_response(csv_file_path)
+def do_response(csv_file_path):
     # === 🔥 SET THESE ===   
     api_key = "AIzaSyD0NwDy0GYqlBR2jK2SlyzdN9BeQWmMmrs"           # Your Gemini API Key      # Your CSV file path
 
