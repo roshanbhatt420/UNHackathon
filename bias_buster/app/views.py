@@ -12,7 +12,6 @@ def home_page(request):
     # Render the index.html template
     return render(request, 'index.html')
 
-
 def about_page(request):
     # Render the about.html template
     return render(request, 'about.html')
