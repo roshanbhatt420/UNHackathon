@@ -61,9 +61,9 @@
             <div class="container">
                 <h1>Results</h1>
                 {% if result %}
-                    <p>{{ result }}</p>
-                {% else %}
-                    <p>No results available.</p>
+                  <div class="result-box">
+                    <p class="result-text">{{ result }}</p>
+                  </div>
                 {% endif %}
                 {% if result_model and result_model.sensitive_attributes %}
                   <div class="dashboard">
