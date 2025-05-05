@@ -12,7 +12,6 @@ def home_page(request):
     # Render the index.html template
     return render(request, 'index.html')
 
-
 def about_page(request):
     # Render the about.html template
     return render(request, 'about.html')
@@ -25,10 +24,9 @@ def check_page(request):
     # handle uploaded csv file 
     if request.method == 'POST' and request.FILES.get('file'):
         uploaded_file = request.FILES['file']
-
+        model_response=process_csv_with_model(uploaded_file)
         # sending filr to the  gemini model for processing
         summary = do_response(uploaded_file)
-        model_response=process_csv_with_model(uploaded_file)
         return render(request, 'check.html', { 'result_model': model_response, 'result':summary})
     # Render the check.html template for GET requests
     return render(request, 'check.html')
