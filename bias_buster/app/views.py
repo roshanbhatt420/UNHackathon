@@ -32,8 +32,9 @@ def check_page(request):
 
         try:
             # sending file to the gemini model for processing
-            summary = do_response(uploaded_file)
+            
             model_response = process_csv_with_model(uploaded_file)
+            summary = do_response(uploaded_file)
             return render(request, 'check.html', { 'result_model': model_response, 'result': summary })
         except Exception as e:
             return render(request, 'check.html', { 'error': f'An error occurred while processing the file: {str(e)}' })

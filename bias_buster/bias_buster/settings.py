@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',   
+    'ml_model_new',
 ]
 
 MIDDLEWARE = [
