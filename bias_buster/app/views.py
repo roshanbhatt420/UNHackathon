@@ -47,7 +47,14 @@ def process_uploaded_file(uploaded_file):
     """
     try:
         # Sending file to the gemini model for processing
-        summary = do_response(uploaded_file)
+        # Read the uploaded file content
+        file_content = uploaded_file.read()
+
+        # Process the file content with do_response
+        summary = do_response(file_content)
+
+        # Rewind the file pointer and process with process_csv_with_model
+        uploaded_file.seek(0)
         model_response = process_csv_with_model(uploaded_file)
         print("Model response:", model_response)
         print("Summary:", summary)
