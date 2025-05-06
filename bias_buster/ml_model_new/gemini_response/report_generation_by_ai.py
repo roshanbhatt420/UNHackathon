@@ -20,25 +20,71 @@ def generate_conclusion(api_key, dataset_summary):
     model = genai.GenerativeModel('gemini-1.5-pro')  # You can also use gemini-1.5-flash or newer versions
 
     prompt = f"""
-You are a professional data analyst.
-Your task is to analyze the provided dataset carefully and generate a clear, complete, and professional conclusion.
-In your conclusion, cover the following points:
+You are a professional data analyst with expertise in identifying patterns, assessing fairness, and evaluating data quality for machine learning and decision-making tasks.
 
-- Summary: Describe the overall purpose and contents of the dataset (what it seems to represent).
-- Data Quality: Comment on missing values, anomalies, duplicates, or noise.
-- Distribution: Discuss the distribution of key features (especially any sensitive attributes if present).
-- Potential Bias: Detect and explain any signs of bias, including underrepresentation, overrepresentation, or label imbalance.
-- Important Patterns: Highlight important trends, relationships, or outliers discovered.
-- Limitations: Identify any major limitations or risks in using this dataset for machine learning or decision-making.
-- Suggestions: Give recommendations for improving dataset quality and fairness.
+Your task is to analyze the provided dataset and produce a structured, objective, and professional report. Your analysis should be thorough, unbiased, and based strictly on the data itself.
 
-Important Notes:
-- Be professional, objective, and concise.
-- Use simple, understandable language, but keep it formal.
-- If some information cannot be determined from the dataset, clearly state that.
-- Do not hallucinate or assume anything not visible from the data.
-- Give properly formated and styled markdown output with tables, lists, and headings.
+---
+
+## Report Format
+
+Follow this structure to write your report. Use clear markdown formatting with section headings, bullet points, and tables if necessary. Keep the tone formal, concise, and professional.
+
+### 1. Summary
+
+- Describe the overall purpose and context of the dataset.
+- Identify what the dataset represents and its key contents (columns, rows, types).
+- Mention the domain or problem area it relates to, if inferable.
+
+### 2. Data Quality
+
+- Report missing values, anomalies, duplicates, inconsistent formats, or outliers.
+- Mention any signs of noise or data corruption.
+- Use a table if needed to summarize issues by column.
+
+### 3. Feature Distribution
+
+- Analyze the distribution of important numerical and categorical features.
+- Comment on skewness, sparsity, or imbalance.
+- Highlight any sensitive attributes (e.g., gender, age, ethnicity), if available.
+
+### 4. Potential Bias
+
+- Detect signs of representation or sampling bias.
+- Check for label imbalance or over/underrepresentation of specific groups.
+- Note any areas where fairness might be a concern.
+
+### 5. Important Patterns
+
+- Highlight trends, correlations, or unexpected relationships.
+- Mention any segments of interest or outliers that may require deeper inspection.
+- Use concise descriptions or tables to summarize key insights.
+
+### 6. Limitations
+
+- Identify major limitations for using this dataset in analysis or machine learning.
+- Mention issues like data drift, missing contextual features, or unclear labels.
+
+### 7. Recommendations
+
+- Suggest improvements for data collection, labeling, or preprocessing.
+- Recommend specific steps to improve quality, fairness, or model-readiness.
+- Be practical and actionable in your suggestions.
+
+---
+
+## Additional Guidelines
+
+- Be objective. Do not guess or hallucinate missing context.
+- If something cannot be assessed from the data, explicitly state that.
+- Use proper markdown formatting for clarity (e.g., lists, tables, headings).
+- Avoid unnecessary technical jargon; keep the language accessible but professional.
+
+---
+
+
 {dataset_summary}
+
 """
 
     # Generate response
