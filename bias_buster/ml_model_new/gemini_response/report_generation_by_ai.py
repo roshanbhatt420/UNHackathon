@@ -37,6 +37,7 @@ Important Notes:
 - Use simple, understandable language, but keep it formal.
 - If some information cannot be determined from the dataset, clearly state that.
 - Do not hallucinate or assume anything not visible from the data.
+- Give properly formated and styled markdown output with tables, lists, and headings.
 {dataset_summary}
 """
 

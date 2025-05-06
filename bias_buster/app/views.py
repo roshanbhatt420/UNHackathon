@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import markdown
 import pandas as pd
 # fetching gemini model from the ml_model_new directory
 from ml_model_new.gemini_response.report_generation_by_ai import do_response
@@ -48,11 +49,12 @@ def process_uploaded_file(uploaded_file):
     try:
         # Process the file content with do_response
         summary = do_response(uploaded_file)
+        result = markdown.markdown(summary, extensions=['fenced_code', 'tables', 'codehilite', 'toc'])
 
         # Rewind the file pointer and process with process_csv_with_model
         uploaded_file.seek(0)
         model_response = process_csv_with_model(uploaded_file)
         print("Model response:", model_response)
-        return {'result_model': model_response, 'result': summary}
+        return {'result_model': model_response, 'result':result}
     except Exception as e:
         raise Exception(f"Error during file processing: {str(e)}")
