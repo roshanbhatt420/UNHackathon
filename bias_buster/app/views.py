@@ -49,6 +49,8 @@ def process_uploaded_file(uploaded_file):
         # Sending file to the gemini model for processing
         summary = do_response(uploaded_file)
         model_response = process_csv_with_model(uploaded_file)
+        print("Model response:", model_response)
+        print("Summary:", summary)
         return {'result_model': model_response, 'result': summary}
     except Exception as e:
         raise Exception(f"Error during file processing: {str(e)}")

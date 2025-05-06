@@ -61,6 +61,7 @@ h1 {
   line-height: 1.3;
   text-shadow: var(--shadow-dark), var(--shadow-light);
   letter-spacing: -0.01em;
+  color :#007bd1;
 }
 
 .subtitle {

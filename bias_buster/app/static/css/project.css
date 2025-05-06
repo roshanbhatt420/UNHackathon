@@ -25,64 +25,159 @@ body {
 /* -------------------- Header -------------------- */
 .project-header {
   background: var(--primary-gradient);
-  padding: 7rem 2rem;
+  padding: 8rem 2rem 6rem;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
   color: #fff;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+}
+
+.project-header::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent);
+  animation: pulse 6s infinite;
+  z-index: -1;
 }
 
 .project-header p {
-  font-size: 1.3rem;
-  color: #fff;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 /* -------------------- Case Study Core -------------------- */
 .bias-cases {
-  background: var(--light-bg);
-  padding: 5rem 1rem;
+  padding: 6rem 1rem;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 .case-study-container {
   max-width: 1200px;
   margin: auto;
-  padding: 0 1.5rem;
-  animation: fadeInUp 1s ease-in-out;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 /* -------------------- Section Header -------------------- */
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--accent-color);
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #ffffff;
   position: relative;
   animation: glow 3s infinite alternate;
+  text-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .section-header h2::after {
   content: '';
   display: block;
-  width: 60px;
+  width: 70px;
   height: 4px;
   background: var(--primary-color);
-  margin: 10px auto 0;
-  border-radius: 6px;
+  margin: 12px auto 0;
+  border-radius: 10px;
+  transition: width 0.3s ease;
 }
 
-.subtitle {
-  color: #64748b;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
+.section-header h2:hover::after {
+  width: 90px;
 }
+
+/* -------------------- Subtitle -------------------- */
+.subtitle {
+  color: #475569;
+  font-size: 1.15rem;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 500;
+  animation: fadeIn 1.5s ease-in-out;
+  transition: color 0.3s ease;
+}
+
+.subtitle .name {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.subtitle .theme {
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+/* -------------------- Animations -------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color); }
+  to { text-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.05); opacity: 0.1; }
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .project-header p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-header {
+    padding: 6rem 1rem;
+  }
+
+  .case-study-container {
+    padding: 0 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+}
+
 
 /* -------------------- Case Study Cards -------------------- */
 .case-study-grid {
