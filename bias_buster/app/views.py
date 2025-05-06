@@ -46,18 +46,13 @@ def process_uploaded_file(uploaded_file):
     Returns a dictionary with the results or error messages.
     """
     try:
-        # Sending file to the gemini model for processing
-        # Read the uploaded file content
-        file_content = uploaded_file.read()
-
         # Process the file content with do_response
-        summary = do_response(file_content)
+        summary = do_response(uploaded_file)
 
         # Rewind the file pointer and process with process_csv_with_model
         uploaded_file.seek(0)
         model_response = process_csv_with_model(uploaded_file)
         print("Model response:", model_response)
-        print("Summary:", summary)
         return {'result_model': model_response, 'result': summary}
     except Exception as e:
         raise Exception(f"Error during file processing: {str(e)}")

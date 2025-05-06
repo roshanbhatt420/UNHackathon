@@ -65,41 +65,41 @@
                     <p class="result-text">{{ result }}</p>
                   </div>
                 {% endif %}
-                {% if result_model and result_model.sensitive_attributes %}
-                  <div class="dashboard">
+                {% if result_model %}
+                    <div class="dashboard">
                     <h2>Fairness Analysis Dashboard</h2>
                     {% for feature, metrics in result_model.sensitive_attributes.items %}
                       <div class="feature-section">
-                        <h3>Feature: {{ feature }}</h3>
+                      <h3>Feature: {{ feature }}</h3>
+                      <ul>
+                        <li><strong>Missing Ratio:</strong> {{ metrics.missing_ratio }}</li>
+                        <li><strong>Entropy:</strong> {{ metrics.entropy }}</li>
+                        <li><strong>Representation Ratio:</strong>
                         <ul>
-                          <li><strong>Missing Ratio:</strong> {{ metrics.missing_ratio }}</li>
-                          <li><strong>Entropy:</strong> {{ metrics.entropy }}</li>
-                          <li><strong>Representation Ratio:</strong>
-                            <ul>
-                              {% for group, ratio in metrics.representation_ratio.items %}
-                                <li>{{ group }}: {{ ratio }}</li>
-                              {% endfor %}
-                            </ul>
-                          </li>
-                          {% if metrics.positive_rate_per_group %}
-                            <li><strong>Positive Rate Per Group:</strong>
-                              <ul>
-                                {% for group, rate in metrics.positive_rate_per_group.items %}
-                                  <li>{{ group }}: {{ rate }}</li>
-                                {% endfor %}
-                              </ul>
-                            </li>
-                          {% endif %}
-                          {% if metrics.statistical_parity_difference is not None %}
-                            <li><strong>Statistical Parity Difference:</strong> {{ metrics.statistical_parity_difference }}</li>
-                          {% endif %}
-                          {% if metrics.disparate_impact is not None %}
-                            <li><strong>Disparate Impact:</strong> {{ metrics.disparate_impact }}</li>
-                          {% endif %}
+                          {% for group, ratio in metrics.representation_ratio.items %}
+                          <li>{{ group }}: {{ ratio|floatformat:2 }}</li>
+                          {% endfor %}
                         </ul>
+                        </li>
+                        {% if metrics.positive_rate_per_group %}
+                        <li><strong>Positive Rate Per Group:</strong>
+                          <ul>
+                          {% for group, rate in metrics.positive_rate_per_group.items %}
+                            <li>{{ group }}: {{ rate|floatformat:2 }}</li>
+                          {% endfor %}
+                          </ul>
+                        </li>
+                        {% endif %}
+                        {% if metrics.statistical_parity_difference is not None %}
+                        <li><strong>Statistical Parity Difference:</strong> {{ metrics.statistical_parity_difference|floatformat:2 }}</li>
+                        {% endif %}
+                        {% if metrics.disparate_impact is not None %}
+                        <li><strong>Disparate Impact:</strong> {{ metrics.disparate_impact|floatformat:2 }}</li>
+                        {% endif %}
+                      </ul>
                       </div>
                     {% endfor %}
-                  </div>
+                    </div>
                 {% else %}
                   <p>No results available.</p>
                 {% endif %}
