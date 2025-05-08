@@ -48,17 +48,28 @@
             <div class="upload-container">
             <h1>Upload Your Dataset</h1>
             <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="upload-box">
-                <label for="file-upload" class="upload-image-label">
-                    <img src="{% static 'images/image.png' %}" alt="Upload Icon" class="upload-image">
-                    <p class="click-up">Click to upload your file</p>
-                </label>
-                <input id="file-upload" type="file" name="file" class="file-input" accept=".csv" required>
-                </div>
-                <button type="submit" class="upload-button">Upload</button>
+              {% csrf_token %}
+              <div class="upload-box">
+              <label for="file-upload" class="upload-image-label">
+              <img src="{% static 'images/image.png' %}" alt="Upload Icon" class="upload-image">
+              <p class="click-up">Click to upload your file</p>
+              </label>
+              <input id="file-upload" type="file" name="file" class="file-input" accept=".csv" required>
+              </div>
+              <div id="file-name" class="file-name"></div>
+              <button type="submit" class="upload-button">Upload</button>
             </form>
-            <div class="msg hidden" id="upload-msg"></div>
+            <script>
+              const fileInput = document.getElementById('file-upload');
+              const fileNameDiv = document.getElementById('file-name');
+              fileInput.addEventListener('change', function() {
+              if (fileInput.files.length > 0) {
+                fileNameDiv.textContent = "Selected file: " + fileInput.files[0].name;
+              } else {
+                fileNameDiv.textContent = "";
+              }
+              });
+            </script>
             </div>
         </section>
         <section id="result-section" class="result-section fade-in-section">

@@ -1,5 +1,10 @@
 import pandas as pd
 import google.generativeai as genai
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+gemini_api_key = os.getenv("GEMINI_API_KEY")
 
 def summarize_csv(file_path):
     # Load CSV
@@ -98,7 +103,7 @@ Follow this structure to write your report. Use clear markdown formatting with s
 
 def do_response(csv_file_path):
     # === 🔥 SET THESE ===   
-    api_key = "AIzaSyD0NwDy0GYqlBR2jK2SlyzdN9BeQWmMmrs"           # Your Gemini API Key      # Your CSV file path
+    api_key =gemini_api_key      
 
     dataset_summary = summarize_csv(csv_file_path)
     summary=generate_conclusion(api_key, dataset_summary)

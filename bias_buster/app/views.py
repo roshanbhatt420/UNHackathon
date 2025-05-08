@@ -19,25 +19,27 @@ def about_page(request):
 
 
 
-
 @csrf_exempt
 def check_page(request):
     # Handle uploaded CSV file
     if request.method == 'POST' and request.FILES.get('file'):
         uploaded_file = request.FILES['file']
-
+        print(f"Received file: {uploaded_file.name}, size: {uploaded_file.size}")
         # Check if the uploaded file is empty
         if uploaded_file.size == 0:
+            print("Uploaded file is empty.")
             return render(request, 'check.html', {'error': 'The uploaded file is empty. Please upload a valid CSV file.'})
-
         try:
             # Process the uploaded file
+            print("Processing uploaded file...")
             result = process_uploaded_file(uploaded_file)
+            print("File processed successfully.")
             return render(request, 'check.html', result)
         except Exception as e:
+            print(f"Error during file processing: {str(e)}")
             return render(request, 'check.html', {'error': f'An error occurred while processing the file: {str(e)}'})
-
     # Render the check.html template for GET requests
+    print("Rendering check.html for GET request.")
     return render(request, 'check.html')
 
 

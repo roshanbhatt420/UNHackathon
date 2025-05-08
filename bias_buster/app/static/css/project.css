@@ -103,7 +103,7 @@ body {
 
 /* -------------------- Subtitle -------------------- */
 .subtitle {
-  color: #475569;
+  color: white;
   font-size: 1.15rem;
   max-width: 750px;
   margin: 0 auto;
@@ -115,12 +115,12 @@ body {
 
 .subtitle .name {
   font-weight: 700;
-  color: var(--primary-color);
+  color: white;
 }
 
 .subtitle .theme {
   font-style: italic;
-  color: var(--accent-color);
+  color: white;
 }
 
 /* -------------------- Animations -------------------- */

@@ -66,14 +66,15 @@ h1 {
 
 .subtitle {
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: var(--text-light);
+  color: white;
   line-height: 1.6;
 }
+
 
 .subtitle .name,
 .subtitle .theme {
   font-weight: 700;
-  color: var(--text-white);
+  color:white;
 }
 
 .subtitle .theme {

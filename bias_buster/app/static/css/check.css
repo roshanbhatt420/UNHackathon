@@ -37,7 +37,7 @@
   height: 360px;
   margin: 1rem auto;
   border-radius: 18px;
-  background: linear-gradient(145deg, #d4d4d4, #f1f1f1);
+  background: linear-gradient(145deg, #ffffff, #f1f1f1);
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2), 
               -8px -8px 20px rgba(255, 255, 255, 0.3);
   display: flex;
