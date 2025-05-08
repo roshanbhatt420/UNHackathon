@@ -22,7 +22,7 @@ def generate_conclusion(api_key, dataset_summary):
     # Configure Gemini client with API key
     genai.configure(api_key=api_key)
 
-    model = genai.GenerativeModel('gemini-1.5-pro')  # You can also use gemini-1.5-flash or newer versions
+    model = genai.GenerativeModel('gemini-2.0-flash')  # You can also use gemini-1.5-flash or newer versions
 
     prompt = f"""
 You are a professional data analyst with expertise in identifying patterns, assessing fairness, and evaluating data quality for machine learning and decision-making tasks.
