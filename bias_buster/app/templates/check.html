@@ -1,173 +1,166 @@
 {% load static %}
-<!-- making uploading section  -->
- <html> 
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0" />
+    <title>Fairalyze AI - Demo</title>
 
-        <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
-        <meta charset="UTF-8">
-      </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/check.css' %}" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+  </head>
+  <body>
+    <header id="navbar" class="navbar">
+      <div class="container nav-container">
+        <a href="{% url 'index' %}" class="logo"> <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI </a>
 
-        <link rel="stylesheet" href="{% static 'css/index.css' %}">
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        <link rel="stylesheet" href="{% static 'css/check.css'%}">
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
 
+        <nav class="nav-links">
+          <a href="{% url 'index' %}" class="nav-link"> <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home </a>
+          <a href="{% url 'check' %}" class="nav-link"> <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Demo</a>
+          <a href="{% url 'about' %}" class="nav-link"> <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team </a>
+        </nav>
+      </div>
+    </header>
 
-    </head>
-    <body>
-        <header id="navbar" class="navbar">
-            <div class="container nav-container">
-                <a href="{% url 'index' %}" class="logo">
-                    <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
-                </a>
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
-                    <span class="menu-line"></span>
-                    <span class="menu-line"></span>
-                    <span class="menu-line"></span>
-                </button>
-
-                <nav class="nav-links">
-                    <a href="{% url 'index' %}" class="nav-link">
-                        <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
-                    </a>
-                    <a href="{% url 'check' %}" class="nav-link">
-                        <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
-                    </a>
-                    <a href="{% url 'about' %}" class="nav-link">
-                        <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
-                    </a>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Upload Section -->
-        <section id="upload-section" class="upload-section fade-in-section">
-            <div class="upload-container">
-            <h1>Upload Your Dataset</h1>
-            <form method="POST" enctype="multipart/form-data">
-              {% csrf_token %}
-              <div class="upload-box">
-              <label for="file-upload" class="upload-image-label">
-              <img src="{% static 'images/image.png' %}" alt="Upload Icon" class="upload-image">
-              <p class="click-up">Click to upload your file</p>
-              </label>
-              <input id="file-upload" type="file" name="file" class="file-input" accept=".csv" required>
-              </div>
-              <div id="file-name" class="file-name"></div>
-              <button type="submit" class="upload-button">Upload</button>
-            </form>
-            <script>
-              const fileInput = document.getElementById('file-upload');
-              const fileNameDiv = document.getElementById('file-name');
-              fileInput.addEventListener('change', function() {
-              if (fileInput.files.length > 0) {
-                fileNameDiv.textContent = "Selected file: " + fileInput.files[0].name;
-              } else {
-                fileNameDiv.textContent = "";
-              }
-              });
-            </script>
-            </div>
-        </section>
-        <section id="result-section" class="result-section fade-in-section">
-            <div class="container">
-                <h1>Results</h1>
-                {% if result %}
-                  <div class="result-box">
-                  <div class="markdown-content">
-                    {{ result|safe }}
-                  </div>
-                  </div>
+    <!-- Upload Section -->
+    <section id="upload-section" class="upload-section fade-in-section">
+      <div class="upload-container">
+        <h1>Upload Your Dataset</h1>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="upload-box">
+            <label for="file-upload" class="upload-image-label">
+              <img src="{% static 'images/upload.png' %}" alt="Upload Icon" class="upload-image" />
+              <p class="click-up">Click to upload your CSV file</p>
+            </label>
+            <input id="file-upload" type="file" name="file" class="file-input" accept=".csv" required />
+          </div>
+          <div id="file-name" class="file-name"></div>
+          <button type="submit" class="upload-button">Upload</button>
+        </form>
+        <script>
+          const fileInput = document.getElementById("file-upload");
+          const fileNameDiv = document.getElementById("file-name");
+          fileInput.addEventListener("change", function () {
+            if (fileInput.files.length > 0) {
+              fileNameDiv.textContent = "Selected file: " + fileInput.files[0].name;
+            } else {
+              fileNameDiv.textContent = "";
+            }
+          });
+        </script>
+      </div>
+    </section>
+    <!-- Modify the result section like this -->
+    {% if result or result_model %}
+    <section id="result-section" class="result-section fade-in-section">
+      <div class="container">
+        <h1>Results</h1>
+        {% if result %}
+        <div class="result-box">
+          <div class="markdown-content">{{ result|safe }}</div>
+        </div>
+        {% endif %} {% if result_model %}
+        <div class="result-box">
+          <h2>Model Analysis</h2>
+          <div class="analysis-content">
+            {% for key, value in result_model.items %}
+            <div class="result-item">
+              <h3>{{ key }}</h3>
+              <ul>
+                <li><strong>Missing Ratio:</strong> {{ value.missing_ratio }}</li>
+                <li><strong>Entropy:</strong> {{ value.entropy }}</li>
+                <li>
+                  <strong>Representation Ratio:</strong>
+                  <ul>
+                    {% for sub_key, sub_value in value.representation_ratio.items %}
+                    <li>{{ sub_key|floatformat:2 }}: {{ sub_value|floatformat:2 }}</li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                {% if value.positive_rate_per_group %}
+                <li><strong>Positive Rate Per Group:</strong> {{ value.positive_rate_per_group }}</li>
+                {% endif %} {% if value.statistical_parity_difference %}
+                <li><strong>Statistical Parity Difference:</strong> {{ value.statistical_parity_difference }}</li>
+                {% endif %} {% if value.disparate_impact %}
+                <li><strong>Disparate Impact:</strong> {{ value.disparate_impact }}</li>
                 {% endif %}
-                {% if result_model %}
-         
-              <div class="result-box"></div>
-                <h2>Model Analysis</h2>
-                <div class="analysis-content">
-                  {% for key, value in result_model.items %}
-                    <div class="result-item">
-                      <h3>{{ key }}</h3>
-                      <ul>
-                        <li><strong>Missing Ratio:</strong> {{ value.missing_ratio }}</li>
-                        <li><strong>Entropy:</strong> {{ value.entropy }}</li>
-                        <li><strong>Representation Ratio:</strong>
-                          <ul>
-                            {% for sub_key, sub_value in value.representation_ratio.items %}
-                              <li>{{ sub_key }}: {{ sub_value }}</li>
-                            {% endfor %}
-                          </ul>
-                        </li>
-                        {% if value.positive_rate_per_group %}
-                          <li><strong>Positive Rate Per Group:</strong> {{ value.positive_rate_per_group }}</li>
-                        {% endif %}
-                        {% if value.statistical_parity_difference %}
-                          <li><strong>Statistical Parity Difference:</strong> {{ value.statistical_parity_difference }}</li>
-                        {% endif %}
-                        {% if value.disparate_impact %}
-                          <li><strong>Disparate Impact:</strong> {{ value.disparate_impact }}</li>
-                        {% endif %}
-                      </ul>
-                    </div>
-                  {% endfor %}
-                </div>
-              </div>
-                {% endif %}
+              </ul>
             </div>
-        </section>
-        <footer class="footer">
-            <div class="footer-content">
-              <div class="footer-grid">
-                <div class="footer-section">
-                  <h4>Fairalyze AI</h4>
-                  <div class="sdg-badges">
-                    <span class="sdg-badge sdg-5">SDG 5</span>
-                    <span class="sdg-badge sdg-10">SDG 10</span>
-                  </div>
-                  <p class="hackathon-mention">As a part of GNEC Hackathon 2025</p>
-                </div>
-      
-                <div class="footer-section">
-                  <h4>Quick Links</h4>
-                  <div class="footer-links">
-                    <a href="{% url 'index' %}#overview">
-                      <div class="link-icon">
-                        <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
-                      </div>
-                      <span>Home</span>
-                    
-                    </a>
-                    <!-- adding quick links for check fairness also -->
-                    <a href="{% url 'check' %}#features">
-                      <div class="link-icon">
-                        <img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />
-                      </div>
-                      <span>Check Fairness</span>
-                    </a>
-      
-                    <a href="{% url 'about' %}#team">
-                      <div class="link-icon">
-                        <img src="{% static 'images/team1.png' %}" alt="Team" class="nav-icons" />
-                      </div>
-                      <span>Team</span>
-                    </a>
-                  </div>
-                </div>
-      
-                <div class="footer-section">
-                  <h4>Connect</h4>
-                  <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
-                    <img alt="Discord-logo" src="{% static 'images/discord.png' %}" class="social-icon" />
-                    <span>Join Discord</span>
-                  </a>
-                </div>
-              </div>
-      
-              <div class="footer-copyright">
-                <p>&copy; 2025 Fairalyze AI | GNEC Hackathon Project</p>
-              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h4>Fairalyze AI</h4>
+            <div class="sdg-badges">
+              <span class="sdg-badge sdg-5">SDG 5</span>
+              <span class="sdg-badge sdg-10">SDG 10</span>
             </div>
-          </footer>
- </html>
+            <p class="hackathon-mention">As a part of GNEC Hackathon 2025</p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+              <a href="{% url 'index' %}#overview">
+                <div class="link-icon">
+                  <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
+                </div>
+                <span>Home</span>
+              </a>
+              <!-- adding quick links for check fairness also -->
+              <a href="{% url 'check' %}#features">
+                <div class="link-icon">
+                  <img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />
+                </div>
+                <span>Demo</span>
+              </a>
+
+              <a href="{% url 'about' %}#team">
+                <div class="link-icon">
+                  <img src="{% static 'images/team1.png' %}" alt="Team" class="nav-icons" />
+                </div>
+                <span>Team</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <a href="https://discord.gg/FSCNXdXdac" target="_blank" class="discord-link">
+              <img alt="Discord-logo" src="{% static 'images/discord.png' %}" class="social-icon" />
+              <span>Join Discord</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-copyright">
+          <p>&copy; 2025 Fairalyze AI | GNEC Hackathon Project</p>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>
