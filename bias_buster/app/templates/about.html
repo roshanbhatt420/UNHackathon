@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>Fairalyze AI - About Us</title>
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
 
     <!-- Google Fonts Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    
+
     <!-- Global CSS -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'css/about.css' %}" />
@@ -29,16 +29,10 @@
         </button>
 
         <nav class="nav-links">
-          <a href="{% url 'index' %}" class="nav-link">
-              <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
-          </a>
-          <a href="{% url 'check' %}" class="nav-link">
-              <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
-          </a>
-          <a href="{% url 'about' %}" class="nav-link">
-              <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
-          </a>
-      </nav>
+          <a href="{% url 'index' %}" class="nav-link"> <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home </a>
+          <a href="{% url 'check' %}" class="nav-link"> <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Demo </a>
+          <a href="{% url 'about' %}" class="nav-link"> <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team </a>
+        </nav>
       </div>
     </header>
 
@@ -46,9 +40,7 @@
     <section class="mission-section fade-in-section">
       <div class="container">
         <h1>Our Mission</h1>
-        <p>
-          At Fairalyze AI, our mission is to empower developers and organizations to create fair and unbiased AI systems...
-        </p>
+        <p>At Fairalyze AI, our mission is to empower developers and organizations to create fair and unbiased AI systems...</p>
         <a href="{% url 'index' %}" class="cta-button">Learn About Our Approach</a>
       </div>
     </section>
@@ -59,17 +51,17 @@
         <h2>Our Core Commitments</h2>
         <div class="commitment-cards">
           <div class="commitment">
-            <img src="{% static 'images/transparency.png' %}" alt="Transparency">
+            <img src="{% static 'images/transparency.png' %}" alt="Transparency" />
             <h3>Radical Transparency</h3>
             <p>All fairness assessments include explainable AI techniques...</p>
           </div>
           <div class="commitment">
-            <img src="{% static 'images/SDG-logo.png' %}" alt="sdg-logo" class="sdg-logo">
+            <img src="{% static 'images/SDG-logo.png' %}" alt="sdg-logo" class="sdg-logo" />
             <h3>SDG-Aligned Development</h3>
             <p>Directly supporting UN Sustainable Development Goals...</p>
           </div>
           <div class="commitment">
-            <img src="{% static 'images/education.png' %}" alt="Education">
+            <img src="{% static 'images/education.png' %}" alt="Education" />
             <h3>Developer Education</h3>
             <p>Free resources and tutorials on ethical AI practices...</p>
           </div>
@@ -157,7 +149,7 @@
                 <div class="link-icon">
                   <img src="{% static 'images/lists1.png' %}" alt="Check" class="nav-icons" />
                 </div>
-                <span>Check Fairness</span>
+                <span>Demo</span>
               </a>
               <a href="{% url 'about' %}#team">
                 <div class="link-icon">

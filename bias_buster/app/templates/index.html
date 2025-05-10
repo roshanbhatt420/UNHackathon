@@ -4,24 +4,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <title>Fairalyze AI</title>
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
-
+    <title>Fairalyze AI - Home</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    
+
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}" />
     <!-- CSS Files -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/project.css' %}" />
   </head>
+
   <body>
     <!-- Navigation Bar -->
     <header id="navbar" class="navbar">
       <div class="container nav-container">
-        <a href="{% url 'index' %}" class="logo">
-          <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI
-        </a>
+        <a href="{% url 'index' %}" class="logo"> <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-icons-logo" />Fairalyze AI </a>
 
         <button class="mobile-menu-btn" aria-label="Toggle menu">
           <span class="menu-line"></span>
@@ -30,16 +27,9 @@
         </button>
 
         <nav class="nav-links">
-          <a href="{% url 'index' %}" class="nav-link">
-            <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home
-
-          </a>
-          <a href="{% url 'check' %}" class="nav-link">
-            <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />CHECK FAIRNESS
-          </a>
-          <a href="{% url 'about' %}" class="nav-link">
-            <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team
-          </a>
+          <a href="{% url 'index' %}" class="nav-link"> <img src="{% static 'images/home.png' %}" alt="Home" class="nav-icons" />Home </a>
+          <a href="{% url 'check' %}" class="nav-link"> <img src="{% static 'images/lists.png' %}" alt="Features" class="nav-icons" />Demo</a>
+          <a href="{% url 'about' %}" class="nav-link"> <img src="{% static 'images/team.png' %}" alt="Teams" class="nav-icons" />Team </a>
         </nav>
       </div>
     </header>
@@ -47,12 +37,12 @@
     <!-- Main Section -->
     <section class="mainbox">
       <section id="overview" class="main">
-        <div class="main-content" style="padding: 2rem 1rem;">
-          <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2;">
-            Ensure Fairness In Your AI Models
-          </h1>
-          <p class="subtitle hero-subtitle" style="color: #e0e7ef; font-size: 1.35rem; max-width: 700px; margin: 0 auto;">
-            <span class="name" style="color: #38bdf8; font-weight: 600;">Fairalyze AI</span> is an AI-powered platform that calculates key fairness-related metrics and generates insightful summaries about datasets. While it does not directly detect bias, it equips developers and organizations with the tools needed to identify and understand potential biases in their algorithms — fostering fairness, inclusivity, and reduced discrimination.
+        <div class="main-content">
+          <h1>Ensure Fairness In Your AI Models</h1>
+          <p class="subtitle hero-subtitle">
+            <span class="name">Fairalyze AI</span> is an AI-powered platform that calculates key fairness-related metrics and generates insightful
+            summaries about datasets. While it does not directly detect bias, it equips developers and organizations with the tools needed to identify
+            and understand potential biases in their algorithms — fostering fairness, inclusivity, and reduced discrimination.
           </p>
         </div>
         <div class="SDGbanner">
@@ -64,51 +54,56 @@
     <section class="project-header">
       <div class="container">
         <h1 class="overview-title">Unlocking Fairness in Artificial Intelligence</h1>
-        <p>Bias in data undermines the credibility and effectiveness of AI systems. At Fairalyze AI, we champion transparency and inclusivity by providing powerful tools to detect, visualize, and mitigate bias before it becomes a problem.</p>
+        <p>
+          Bias in data undermines the credibility and effectiveness of AI systems. At Fairalyze AI, we champion transparency and inclusivity by
+          providing powerful tools to detect, visualize, and mitigate bias before it becomes a problem.
+        </p>
         <p>Our mission is simple: empower organizations to build AI that serves everyone equally, without hidden distortions.</p>
       </div>
     </section>
 
-<!-- Challenge Section -->
-<section style="background: #f8fafc; padding: 4rem 1rem; text-align: center; animation: fadeIn 1s ease-in-out;">
-  <div style="max-width: 900px; margin: auto;">
-    <h2 style="font-size: 2.5rem; color: #0f172a; margin-bottom: 1rem;">The Challenge</h2>
-    <p style="font-size: 1.1rem; color: #475569; line-height: 1.8;">
-      Many modern datasets reflect historical inequalities and social biases. If these imbalances go unnoticed, AI models can unintentionally reinforce discrimination in hiring, finance, healthcare, and beyond. Early identification of bias-inducing patterns is critical for building fair, responsible AI.
-    </p>
-  </div>
-</section>
+    <!-- Challenge Section -->
+    <section class="challenge-section">
+      <div class="container">
+        <h2>The Challenge</h2>
+        <p>
+          Many modern datasets reflect historical inequalities and social biases. If these imbalances go unnoticed, AI models can unintentionally
+          reinforce discrimination in hiring, finance, healthcare, and beyond. Early identification of bias-inducing patterns is critical for building
+          fair, responsible AI.
+        </p>
+      </div>
+    </section>
 
-<!-- Our Solution Section -->
-<section style="background: linear-gradient(135deg,rgb(73, 76, 85),6rgb(48, 52, 59)); padding: 4rem 1rem; text-align: center; color: #fff; animation: fadeInUp 1.2s ease-in-out;">
-  <div style="max-width: 900px; margin: auto;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Our Solution</h2>
-    <p style="font-size: 1.1rem; line-height: 1.8;">
-      <strong>Fairalyze AI</strong> doesn’t just attempt to detect bias — it empowers you with deep insights. Our platform calculates fairness-related metrics, visualizes disparities, and generates comprehensive summaries to help uncover potential biases. Guided by global ethical frameworks like UNESCO's AI principles, we enable responsible decision-making from the data up.
-    </p>
-  </div>
-</section>
+    <!-- Our Solution Section -->
+    <section class="solution-section">
+      <div class="container">
+        <h2>Our Solution</h2>
+        <p>
+          <strong>Fairalyze AI</strong> doesn't just attempt to detect bias — it empowers you with deep insights. Our platform calculates
+          fairness-related metrics, visualizes disparities, and generates comprehensive summaries to help uncover potential biases. Guided by global
+          ethical frameworks like UNESCO's AI principles, we enable responsible decision-making from the data up.
+        </p>
+      </div>
+    </section>
 
-<!-- Features Section -->
-<section style="background: #fff; padding: 4rem 1rem; text-align: center; animation: fadeInUp 1.5s ease-in-out;">
-  <div style="max-width: 900px; margin: auto;">
-    <h2 style="font-size: 2.5rem; color: #0f172a; margin-bottom: 2rem;">Key Features</h2>
-    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1.5rem;">
-      <li style="font-size: 1.1rem; color: #334155; background: #f1f5f9; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.04);">
-        ⚖️ <strong>Fairness Metrics:</strong> Computes key statistical measures like Disparate Impact, Equal Opportunity, and Demographic Parity.
-      </li>
-      <li style="font-size: 1.1rem; color: #334155; background: #f1f5f9; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.04);">
-        📊 <strong>Bias Summary Reports:</strong> Generates easy-to-understand summaries, graphs, and data visualizations for stakeholders.
-      </li>
-      <li style="font-size: 1.1rem; color: #334155; background: #f1f5f9; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.04);">
-        🧠 <strong>Proactive Guidance:</strong> Receive intelligent recommendations when potential bias or fairness thresholds are exceeded.
-      </li>
-      <li style="font-size: 1.1rem; color: #334155; background: #f1f5f9; padding: 1rem 1.5rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.04);">
-        🔐 <strong>Privacy & Ethics First:</strong> Fully compliant with GDPR and data anonymization practices to ensure trust and security.
-      </li>
-    </ul>
-  </div>
-</section>
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <h2>Key Features</h2>
+        <ul class="features-list">
+          <li>
+            ⚖️ <strong>Fairness Metrics:</strong> Computes key statistical measures like Disparate Impact, Equal Opportunity, and Demographic Parity.
+          </li>
+          <li>📊 <strong>Bias Summary Reports:</strong> Generates easy-to-understand summaries, graphs, and data visualizations for stakeholders.</li>
+          <li>
+            🧠 <strong>Proactive Guidance:</strong> Receive intelligent recommendations when potential bias or fairness thresholds are exceeded.
+          </li>
+          <li>
+            🔐 <strong>Privacy & Ethics First:</strong> Fully compliant with GDPR and data anonymization practices to ensure trust and security.
+          </li>
+        </ul>
+      </div>
+    </section>
 
     <!-- How It Works -->
     <section class="how-it-works fade-in-section">
@@ -117,7 +112,7 @@
         <ol class="steps-list">
           <li><strong>Step 1: Upload Data</strong> — Securely upload your CSV or Excel datasets through our encrypted interface.</li>
           <li><strong>Step 2: Analyze Different Matrices</strong> — Our engine scans your data for demographic representation issues.</li>
-          <li><strong>Step 3: Give AI Based  Insights</strong> — Get intuitive charts highlighting areas of concern.</li>
+          <li><strong>Step 3: Give AI Based Insights</strong> — Get intuitive charts highlighting areas of concern.</li>
           <li><strong>Step 4: Improvement Recommendations for Datasets</strong> — Apply expert recommendations to rebalance and enrich your data.</li>
         </ol>
       </div>
@@ -135,7 +130,11 @@
           <!-- Case Study 1 -->
           <article class="case-study-card" id="gender-bias-case">
             <div class="case-study-image">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Gender bias in AI" loading="lazy" />
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Gender bias in AI"
+                loading="lazy"
+              />
             </div>
             <div class="case-study-content">
               <h3>Amazon Recruitment Algorithm (2018)</h3>
@@ -159,14 +158,20 @@
           <!-- Case Study 2 -->
           <article class="case-study-card" id="racial-bias-case">
             <div class="case-study-image">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Racial bias in lending" loading="lazy" />
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                alt="Racial bias in lending"
+                loading="lazy"
+              />
             </div>
             <div class="case-study-content">
               <h3>Algorithmic Lending Discrimination (2022)</h3>
               <div class="case-study-details">
                 <div class="problem">
                   <h4>Documented Issue</h4>
-                  <p>FDIC report showed minority applicants faced 40% higher denial rates despite similar financial profiles to approved applicants.</p>
+                  <p>
+                    FDIC report showed minority applicants faced 40% higher denial rates despite similar financial profiles to approved applicants.
+                  </p>
                 </div>
                 <div class="solution">
                   <h4>Fairalyze Prevention</h4>
@@ -192,13 +197,12 @@
       <div class="container">
         <h2>Our Impact</h2>
         <p>
-          Fairalyze AI is pioneering bias detection for ethical AI systems, directly advancing SDG 5 (Gender Equality) and SDG 10 (Reduced Inequalities). 
-          Our technology identifies 12+ critical bias patterns—helping developers build AI that treats everyone equally. 
-          While still in prototype phase, our testing shows 92% accuracy in detecting these biases in synthetic datasets.
+          Fairalyze AI is pioneering bias detection for ethical AI systems, directly advancing SDG 5 (Gender Equality) and SDG 10 (Reduced
+          Inequalities). Our technology identifies 12+ critical bias patterns—helping developers build AI that treats everyone equally. While still in
+          prototype phase, our testing shows 92% accuracy in detecting these biases in synthetic datasets.
         </p>
       </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -221,14 +225,12 @@
                   <img src="{% static 'images/home1.png' %}" alt="Home" class="nav-icons" />
                 </div>
                 <span>Home</span>
-              
               </a>
-              <!-- adding quick links for check fairness also -->
               <a href="{% url 'check' %}#features">
                 <div class="link-icon">
                   <img src="{% static 'images/lists1.png' %}" alt="Features" class="nav-icons" />
                 </div>
-                <span>Check Fairness</span>
+                <span>Demo</span>
               </a>
 
               <a href="{% url 'about' %}#team">
@@ -254,7 +256,6 @@
         </div>
       </div>
     </footer>
-
 
     <!-- JS Files -->
     <script src="{% static 'js/script.js' %}"></script>
