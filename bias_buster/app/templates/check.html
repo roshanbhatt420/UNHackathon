@@ -52,20 +52,71 @@
           <div id="file-name" class="file-name"></div>
           <button type="submit" class="upload-button">Upload</button>
         </form>
+
         <script>
           const fileInput = document.getElementById("file-upload");
           const fileNameDiv = document.getElementById("file-name");
-          fileInput.addEventListener("change", function () {
+          const uploadForm = document.querySelector("form");
+          const submitButton = document.querySelector("[type='submit']");
+
+          // Initialize with Django template variable
+          const hasResults = {{ result|default:False|yesno:"true,false" }};
+
+          // Set initial style
+          fileNameDiv.style.color = "white";
+
+          fileInput.addEventListener("change", function() {
+            updateFileStatus();
+          });
+
+          function updateFileStatus() {
             if (fileInput.files.length > 0) {
               fileNameDiv.textContent = "Selected file: " + fileInput.files[0].name;
-            } else {
-              fileNameDiv.textContent = "";
+              fileNameDiv.style.color = "#4CAF50";
+            }
+          }
+
+          uploadForm.addEventListener("submit", function(e) {
+            if (fileInput.files.length === 0) {
+              e.preventDefault();
+              fileNameDiv.textContent = "Please select file first";
+              fileNameDiv.style.color = "#FF5252";
+              return;
+            }
+
+            fileNameDiv.textContent = "⏳ Processing your file...";
+            fileNameDiv.style.color = "#2196F3";
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.textContent = "Processing...";
             }
           });
+
+          // Check results on page load
+          if (hasResults) {
+            fileNameDiv.textContent = "File processed successfully!";
+            fileNameDiv.style.color = "#4CAF50";
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = "Upload";
+            }
+          } else {
+            // Initialize file status on page load
+            updateFileStatus();
+          }
+
+
+          if (submitButton) {
+            submitButton.addEventListener("click", function() {
+              if (fileInput.files.length === 0) {
+                fileNameDiv.textContent = "Please select file first";
+                fileNameDiv.style.color = "#FF5252";
+              }
+            });
+          }
         </script>
       </div>
     </section>
-    <!-- Modify the result section like this -->
     {% if result or result_model %}
     <section id="result-section" class="result-section fade-in-section">
       <div class="container">
@@ -162,5 +213,6 @@
       </div>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>
+    \
   </body>
 </html>
